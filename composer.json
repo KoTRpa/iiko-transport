@@ -1,0 +1,51 @@
+{
+    "name": "kma/iiko-transport",
+    "type": "library",
+    "description": "Iiko Transport API",
+    "keywords": [
+        "Iiko", "Iiko Transport"
+    ],
+    "homepage": "https://github.com/KoTRpa/iiko-transport",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maxim Kashkin",
+            "email": "4kotrpa@gmail.com",
+            "homepage": "https://github.com/kotrpa"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KMA\\IikoTransport\\IikoTransportServiceProvider"
+            ],
+            "aliases": {
+                "IikoTransport": "KMA\\IikoTransport\\Facades\\IikoTransportFacade"
+            }
+        }
+    },
+    "suggest": {
+        "psr/log": "Required for using the Log middleware",
+        "vlucas/phpdotenv": "Required for using env()"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "KMA\\IikoTransport\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KMA\\IikoTransport\\Tests\\": "tests/"
+        }
+    }
+}
