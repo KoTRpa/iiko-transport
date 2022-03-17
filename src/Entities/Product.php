@@ -66,14 +66,18 @@ class Product
     public ?string $productCategoryId = null;
 
     /**
-     * @var \KMA\IikoTransport\Enums\ProductType|null dish | good | modifier
+     * TODO: Return enum when JsonMapper supports it
+     * \KMA\IikoTransport\Enums\ProductType|null dish | good | modifier
+     * @var string|null dish | good | modifier
      */
-    public ?ProductType $type = null;
+    public ?string $type = null;
 
     /**
-     * @var \KMA\IikoTransport\Enums\OrderItemType Product | Compound
+     * TODO: Return enum when JsonMapper supports it
+     * \KMA\IikoTransport\Enums\OrderItemType Product | Compound
+     * @var string Product | Compound
      */
-    public OrderItemType $orderItemType;
+    public string $orderItemType;
 
     /**
      * @var string|null <uuid> Modifier schema's ID

@@ -2,9 +2,12 @@
 
 namespace KMA\IikoTransport\Entities;
 
+use KMA\IikoTransport\Traits\Jsonable;
 
 class Nomenclature
 {
+    use Jsonable;
+
     /**
      * @var string <uuid> Operation ID
      */

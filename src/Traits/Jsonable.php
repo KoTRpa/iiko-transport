@@ -14,4 +14,9 @@ trait Jsonable
         });
     }
 
+    public static function fromJson(string $json)
+    {
+        return new static();
+    }
+
 }
