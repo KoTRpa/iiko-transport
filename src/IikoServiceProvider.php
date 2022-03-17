@@ -1,11 +1,10 @@
 <?php
 
-
 namespace KMA\IikoTransport;
 
 use Illuminate\Support\ServiceProvider;
 
-class IikoServiceProvider extends ServiceProvider
+class IikoTransportServiceProvider extends ServiceProvider
 {
     /** Boot the service provider. */
     public function boot()
