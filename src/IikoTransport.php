@@ -11,7 +11,8 @@ class IikoTransport
 
     use Endpoints\Auth,
         Endpoints\Nomenclature,
-        Endpoints\Delivery;
+        Endpoints\Delivery,
+        Endpoints\Organizations;
 
     protected JsonMapper $mapper;
 
