@@ -10,7 +10,8 @@ class IikoTransport
     use Traits\Http;
 
     use Endpoints\Auth,
-        Endpoints\Nomenclature;
+        Endpoints\Nomenclature,
+        Endpoints\Delivery;
 
     protected JsonMapper $mapper;
 

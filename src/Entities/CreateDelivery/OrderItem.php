@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\CreateDelivery;
 
 use KMA\IikoTransport\Traits\Jsonable;
 
@@ -12,14 +12,15 @@ class OrderItem
     use Jsonable;
 
     /**
+     * @required
      * @var string <uuid> ID of menu item
      * Can be obtained by /api/1/nomenclature operation
      */
     public string $productId;
 
     /**
-     * @var \KMA\IikoTransport\Entities\OrderItemModifier[]|null Modifiers
-     * Array of objects (iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Modifier)
+     * @var \KMA\IikoTransport\Entities\CreateDelivery\Modifier[]|null Modifiers
+     * [iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Modifier]
      */
     public ?array $modifiers = null;
 
@@ -38,6 +39,7 @@ class OrderItem
     public ?string $positionId = null;
 
     /**
+     * @required
      * @var string Product
      * for Compound see other OrderItem
      */
@@ -50,6 +52,7 @@ class OrderItem
     public float $amount;
 
     /**
+     * @required
      * @var string|null <uuid> Size ID
      * Required if a stock list item has a size scale
      */

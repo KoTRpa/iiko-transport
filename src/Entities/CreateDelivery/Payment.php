@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\CreateDelivery;
 
 use KMA\IikoTransport\Traits\Jsonable;
 
@@ -12,18 +12,21 @@ class Payment
     use Jsonable;
 
     /**
+     * @required
      * @var string
      * depends on Payment class
      */
     public string $paymentTypeKind = 'Cash';
 
     /**
+     * @required
      * @var float Amount due
      * [0..10000000000]
      */
     public float $sum;
 
     /**
+     * @required
      * @var string <uuid> Payment type
      * Can be obtained by /api/1/payment_types operation
      */
@@ -42,6 +45,7 @@ class Payment
 
     /**
      * @var bool Whether the payment item is externally fiscalized
+     * Allowed from version 7.6.3
      */
     public bool $isFiscalizedExternally = false;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\CreateDelivery;
 
 use KMA\IikoTransport\Traits\Jsonable;
 
@@ -17,8 +17,9 @@ class DiscountsInfo
     public ?array $card = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\CreateOrder\Discount[]|null Discounts/surcharges
+     * @var \KMA\IikoTransport\Entities\CreateDelivery\Discount[]|null Discounts/surcharges
      * Array of objects (iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Discount)
+     * Type iikoCard allowed from version 7.4.4
      */
     public ?array $discounts = null;
 }

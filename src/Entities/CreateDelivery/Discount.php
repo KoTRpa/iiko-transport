@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateOrder;
+namespace KMA\IikoTransport\Entities\CreateDelivery;
 
 use KMA\IikoTransport\Traits\Jsonable;
 
@@ -9,6 +9,7 @@ class Discount
     use Jsonable;
 
     /**
+     * @required
      * @var string <uuid> Discount type
      * Can be obtained by /api/1/discounts operation
      */
@@ -26,6 +27,7 @@ class Discount
     public ?array $selectivePositions = null;
 
     /**
+     * @required
      * @var string Discount type
      * TODO: make iikoCard discount
      */

@@ -1,20 +1,22 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\CreateDelivery;
 
 use KMA\IikoTransport\Traits\Jsonable;
 
-class OrderItemModifier
+class Modifier
 {
     use Jsonable;
 
     /**
+     * @required
      * @var string <uuid> Modifier item ID
      * Can be obtained by /api/1/nomenclature operation.
      */
     public string $productId;
 
     /**
+     * @required
      * @var float Quantity
      */
     public float $amount;
