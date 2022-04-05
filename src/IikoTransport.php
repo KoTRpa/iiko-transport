@@ -12,7 +12,8 @@ class IikoTransport
     use Endpoints\Auth,
         Endpoints\Nomenclature,
         Endpoints\Delivery,
-        Endpoints\Organizations;
+        Endpoints\Organizations,
+        Endpoints\TerminalGroups;
 
     protected JsonMapper $mapper;
 
@@ -20,7 +21,6 @@ class IikoTransport
         $this->mapper = new JsonMapper();
         $this->mapper->bEnforceMapType = false;
     }
-
 
     /**
      * Get the specified configuration value.
