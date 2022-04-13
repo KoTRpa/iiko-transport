@@ -2,6 +2,7 @@
 
 namespace KMA\IikoTransport\Entities\CreateDelivery;
 
+use KMA\IikoTransport\Entities\DeliveryPoint;
 use KMA\IikoTransport\Traits\Jsonable;
 
 use KMA\IikoTransport\Entities\Customer;
@@ -49,7 +50,7 @@ class Order
     public ?string $orderServiceType = null;
 
     /**
-     * @var DeliveryPoint|null Delivery point details.
+     * @var \KMA\IikoTransport\Entities\DeliveryPoint|null Delivery point details.
      * Not required in case of customer pickup. Otherwise, required.
      */
     public ?DeliveryPoint $deliveryPoint = null;

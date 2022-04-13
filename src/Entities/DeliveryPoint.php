@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateDelivery;
+namespace KMA\IikoTransport\Entities;
 
 use KMA\IikoTransport\Entities\Address;
 use KMA\IikoTransport\Entities\Coordinates;
