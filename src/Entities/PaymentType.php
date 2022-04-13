@@ -93,7 +93,7 @@ class PaymentType
             $this->paymentProcessingType = $data['paymentProcessingType'] ?? null;
             $this->paymentTypeKind = $data['paymentTypeKind'] ?? null;
 
-            $this->terminalGroups = \collect($data['terminalGroups'])->each(function ($tg) {
+            $this->terminalGroups = \collect($data['terminalGroups'])->map(function ($tg) {
                 return TerminalGroupItem::fromArray($tg);
             });
         }

@@ -23,7 +23,7 @@ class Response implements IEntity
     public function __construct(?array $data = null)
     {
         $this->correlationId = $data['correlationId']; // TODO: на доверии?
-        $this->paymentTypes = \collect($data['paymentTypes'])->each(function (array $pt) {
+        $this->paymentTypes = \collect($data['paymentTypes'])->map(function (array $pt) {
             return PaymentType::fromArray($pt);
         });
     }

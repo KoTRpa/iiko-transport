@@ -31,6 +31,6 @@ trait Dictionaries
             'Authorization' => 'Bearer ' . $this->accessToken()
         ])->getDecodedBody();
 
-        return Response::fromArray($res);
+        return PaymentTypes\Response::fromArray($res);
     }
 }
