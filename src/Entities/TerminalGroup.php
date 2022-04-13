@@ -2,6 +2,10 @@
 
 namespace KMA\IikoTransport\Entities;
 
+/**
+ * @deprecated will be replaced with TerminalGroupItem
+ * TODO: replace with TerminalGroupItem
+ */
 class TerminalGroup
 {
     /**

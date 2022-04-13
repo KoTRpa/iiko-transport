@@ -10,6 +10,7 @@ class IikoTransport
     use Traits\Http;
 
     use Endpoints\Auth,
+        Endpoints\Dictionaries,
         Endpoints\Nomenclature,
         Endpoints\Delivery,
         Endpoints\Organizations,

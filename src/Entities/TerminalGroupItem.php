@@ -2,8 +2,18 @@
 
 namespace KMA\IikoTransport\Entities;
 
-class TerminalGroupItem
+use KMA\IikoTransport\Contracts\Arrayable;
+use KMA\IikoTransport\Contracts\IEntity;
+use KMA\IikoTransport\Traits\Jsonable;
+
+/**
+ * @deprecated will be moved to TerminalGroup namespace
+ * TODO: move to terminals namespace
+ */
+class TerminalGroupItem implements IEntity
 {
+    use Arrayable, Jsonable;
+
     /**
      * @required
      * @var string <uuid> Delivery group ID.
@@ -23,4 +33,34 @@ class TerminalGroupItem
      * @var string Terminal group name
      */
     public string $name;
+
+    public function __construct(?array $data = null)
+    {
+        if ($data !== null) {
+            $this->validate($data);
+            $this->id = $data['id'];
+            $this->organizationId = $data['organizationId'];
+            $this->name = $data['name'];
+        }
+    }
+
+    /**
+     * @param array $data
+     * @return void
+     * @throws \InvalidArgumentException
+     */
+    private function validate(array $data): void
+    {
+        if (!isset($data['id'])) {
+            throw new \InvalidArgumentException('Field "id" is undefined');
+        }
+
+        if (!isset($data['organizationId'])) {
+            throw new \InvalidArgumentException('Field "organizationId" is undefined');
+        }
+
+        if (!isset($data['name'])) {
+            throw new \InvalidArgumentException('Field "name" is undefined');
+        }
+    }
 }
