@@ -15,11 +15,10 @@ use KMA\IikoTransport\Http\Response;
 trait Delivery
 {
     /**
-     * @param string $orgId iiko organization id
-     * @return \KMA\IikoTransport\Entities\Nomenclature
+     * @param \KMA\IikoTransport\Entities\Requests\CreateDeliveryRequest $request
+     * @return \KMA\IikoTransport\Http\Response
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
-     * @throws \JsonMapper_Exception
      */
     public function createDelivery(CreateDeliveryRequest $request): Response
     {
