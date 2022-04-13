@@ -62,10 +62,11 @@ class PaymentType
     public ?string $paymentProcessingType = null;
 
     /**
-     * @var \KMA\IikoTransport\Enums\PaymentTypeKind|null Payment type category
+     * @var string|null Payment type category
      * Enum: "Unknown" "Cash" "Card" "Credit" "Writeoff" "Voucher" "External" "IikoCard"
+     * TODO: migrate to enums
      */
-    public ?PaymentTypeKind $paymentTypeKind = null;
+    public ?string $paymentTypeKind = null;
 
     /**
      * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\TerminalGroupItem>
