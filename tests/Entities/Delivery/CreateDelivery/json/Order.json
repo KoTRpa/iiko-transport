@@ -48,6 +48,16 @@
     "operatorId": "373c4133-3dda-4217-938b-a5730b9cc41a",
     "items": [
         {
+            "productId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+            "modifiers": [
+                {
+                    "productId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+                    "amount": 1,
+                    "productGroupId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+                    "price": 12.5,
+                    "positionId": "b4513563-032a-4dbc-8894-4b05c402f7de"
+                }
+            ],
             "type": "string",
             "amount": 0,
             "productSizeId": "b4513563-032a-4dbc-8894-4b05c402f7de",
@@ -76,7 +86,9 @@
             "paymentTypeId": "a681b746-24d1-4f1c-aa71-6af3f1e19567",
             "isProcessedExternally": true,
             "paymentAdditionalData": {
-                "type": "string"
+                "credential": "string",
+                "searchScope": "Reserved",
+                "type": "IikoCard"
             },
             "isFiscalizedExternally": true
         }
@@ -89,7 +101,9 @@
             "paymentTypeId": "a681b746-24d1-4f1c-aa71-6af3f1e19567",
             "isProcessedExternally": true,
             "paymentAdditionalData": {
-                "type": "string"
+                "credential": "string",
+                "searchScope": "Reserved",
+                "type": "IikoCard"
             },
             "isFiscalizedExternally": true
         }
@@ -101,6 +115,11 @@
         },
         "discounts": [
             {
+                "discountTypeId": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "sum": 1,
+                "selectivePositions": [
+                    "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+                ],
                 "type": "string"
             }
         ]

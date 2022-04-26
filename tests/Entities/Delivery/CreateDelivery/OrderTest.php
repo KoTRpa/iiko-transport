@@ -36,7 +36,7 @@ class OrderTest extends EntityTestCase
 
     protected function assertFieldValidity(mixed $entity): void
     {
-        $this->assertIsUuid($entity->transportToFrontTimeout);
+        $this->assertIsUuid($entity->id);
 
         $this->assertIsString($entity->completeBefore);
 
