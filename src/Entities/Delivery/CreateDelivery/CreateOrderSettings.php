@@ -12,4 +12,11 @@ class CreateOrderSettings extends Entity
      * By default - 8 seconds.
      */
     public ?int $transportToFrontTimeout = null;
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->transportToFrontTimeout = $data['transportToFrontTimeout'] ?? null;
+        }
+    }
 }

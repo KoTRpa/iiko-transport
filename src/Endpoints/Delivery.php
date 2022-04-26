@@ -2,7 +2,7 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Requests\CreateDeliveryRequest;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
 use KMA\IikoTransport\Http\Response;
 
 /**
@@ -15,7 +15,7 @@ use KMA\IikoTransport\Http\Response;
 trait Delivery
 {
     /**
-     * @param \KMA\IikoTransport\Entities\Requests\CreateDeliveryRequest $request
+     * @param \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest $request
      * @return \KMA\IikoTransport\Http\Response
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \KMA\IikoTransport\Exceptions\MissingTokenException

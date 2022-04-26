@@ -3,6 +3,7 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Entities\Entity;
+use KMA\IikoTransport\Exceptions\MissingRequiredFieldException;
 
 class CreateDeliveryRequest extends Entity
 {
@@ -29,4 +30,29 @@ class CreateDeliveryRequest extends Entity
      * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order Order
      */
     public Order $order;
+
+
+    /**
+     * @param array|null $data
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     */
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            if (!isset($data['organizationId'])) {
+                throw new MissingRequiredFieldException('organisationId');
+            }
+
+            if (!isset($data['order'])) {
+                throw new MissingRequiredFieldException('order');
+            }
+
+            $this->organizationId = $data['organizationId'];
+            $this->terminalGroupId = $data['terminalGroupId'] ?? null;
+            $this->createOrderSettings = isset($data['createOrderSettings'])
+                ? CreateOrderSettings::fromArray($data['createOrderSettings'])
+                : null;
+            $this->order = Order::fromArray($data['order']);
+        }
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
+use Illuminate\Support\Collection;
 use KMA\IikoTransport\Entities\Entity;
 
 use KMA\IikoTransport\Entities\DeliveryPoint;
@@ -83,10 +84,10 @@ class Order extends Entity
 
     /**
      * @required
-     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem[] Order items
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem> Order items
      * [iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.OrderItem]
      */
-    public array $items;
+    public Collection $items;
 
     /**
      * TODO: make combo entity
@@ -126,4 +127,61 @@ class Order extends Entity
      * @var array|null Information about iikoCard5
      */
     public ?array $iikoCard5Info = null;
+
+    /**
+     * @param array|null $data
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     */
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->validateRequiredFields($data);
+
+            $this->id = $data['id'] ?? null;
+            $this->completeBefore = $data['completeBefore'] ?? null;
+            $this->phone = $data['phone'];
+            $this->orderTypeId = $data['orderTypeId'] ?? null;
+            $this->orderServiceType = $data['orderServiceType'] ?? null;
+
+            $this->deliveryPoint = isset($data['deliveryPoint'])
+                ? DeliveryPoint::fromArray($data['deliveryPoint'])
+                : null;
+
+            $this->comment = $data['comment'] ?? null;
+
+            $this->customer = Customer::fromArray($data['customer']);
+
+            $this->guests = isset($data['guests'])
+                ? Guests::fromArray($data['guests'])
+                : null;
+
+            $this->marketingSourceId = $data['marketingSourceId'] ?? null;
+            $this->operatorId = $data['operatorId'] ?? null;
+
+            $this->items = collect($data['items']);
+
+            $this->combos = isset($data['combos']) ? collect($data['combos']) : null;
+            $this->payments = isset($data['payments']) ? collect($data['payments']) : null;
+            $this->tips = isset($data['tips']) ? collect($data['tips']) : null;
+
+            $this->sourceKey = $data['sourceKey'] ?? null;
+
+            $this->discountsInfo = isset($data['discountsInfo'])
+                ? DiscountsInfo::fromArray($data['discountsInfo'])
+                : null;
+
+            $this->iikoCard5Info = isset($data['iikoCard5Info'])
+                ? IikoCard5Info::fromArray($data['iikoCard5Info'])
+                : null;
+        }
+    }
+
+    protected function requiredFields(): array
+    {
+        return [
+            'phone',
+            'customer',
+            'items',
+        ];
+    }
 }
