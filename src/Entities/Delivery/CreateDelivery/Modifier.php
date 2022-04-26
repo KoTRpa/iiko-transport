@@ -1,13 +1,11 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateDelivery;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Traits\Jsonable;
+use KMA\IikoTransport\Entities\Entity;
 
-class Modifier
+class Modifier extends Entity
 {
-    use Jsonable;
-
     /**
      * @required
      * @var string <uuid> Modifier item ID

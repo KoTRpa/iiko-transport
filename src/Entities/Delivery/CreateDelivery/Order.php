@@ -1,17 +1,15 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateDelivery;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
+
+use KMA\IikoTransport\Entities\Entity;
 
 use KMA\IikoTransport\Entities\DeliveryPoint;
-use KMA\IikoTransport\Traits\Jsonable;
-
 use KMA\IikoTransport\Entities\Customer;
 use KMA\IikoTransport\Entities\Guests;
 
-class Order
+class Order extends Entity
 {
-    use Jsonable;
-
     /**
      * @var string|null <uuid> Order ID
      * Must be unique.
@@ -85,7 +83,7 @@ class Order
 
     /**
      * @required
-     * @var \KMA\IikoTransport\Entities\CreateDelivery\OrderItem[] Order items
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem[] Order items
      * [iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.OrderItem]
      */
     public array $items;
@@ -98,7 +96,7 @@ class Order
     public ?array $combos = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\CreateDelivery\Payment[]|null Order payment components
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Payment[]|null Order payment components
      * [iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Payment]
      * Type IikoCard allowed from version 7.1.5
      */
@@ -119,7 +117,7 @@ class Order
     public ?string $sourceKey = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\CreateDelivery\DiscountsInfo|null Discounts/surcharges
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo|null Discounts/surcharges
      */
     public ?DiscountsInfo $discountsInfo = null;
 

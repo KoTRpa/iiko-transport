@@ -1,13 +1,11 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateDelivery;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Traits\Jsonable;
+use KMA\IikoTransport\Entities\Entity;
 
-class Discount
+class Discount extends Entity
 {
-    use Jsonable;
-
     /**
      * @required
      * @var string <uuid> Discount type
@@ -16,7 +14,8 @@ class Discount
     public string $discountTypeId;
 
     /**
-     * @var float <uuid> Discount/surcharge sum
+     * @required
+     * @var float Discount/surcharge sum
      */
     public float $sum;
 

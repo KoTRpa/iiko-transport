@@ -1,14 +1,11 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateDelivery;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Traits\Jsonable;
+use KMA\IikoTransport\Entities\Entity;
 
-class DiscountsInfo
+class DiscountsInfo extends Entity
 {
-    use Jsonable;
-
-
     /**
      * TODO: make card entity
      * @var array|null Track of discount card to be applied to order
@@ -17,7 +14,7 @@ class DiscountsInfo
     public ?array $card = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\CreateDelivery\Discount[]|null Discounts/surcharges
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Discount[]|null Discounts/surcharges
      * Array of objects (iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Discount)
      * Type iikoCard allowed from version 7.4.4
      */

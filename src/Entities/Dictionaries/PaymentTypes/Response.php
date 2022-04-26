@@ -3,15 +3,12 @@
 namespace KMA\IikoTransport\Entities\Dictionaries\PaymentTypes;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Contracts\Arrayable;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
-use KMA\IikoTransport\Traits\Jsonable;
-use KMA\IikoTransport\Contracts\IEntity;
+use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Entities\PaymentType;
 
-class Response implements IEntity
+class Response extends Entity
 {
-    use Arrayable, Jsonable;
     use HasCorrelationId;
 
     /**

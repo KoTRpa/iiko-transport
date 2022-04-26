@@ -1,16 +1,11 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Requests;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Traits\Jsonable;
+use KMA\IikoTransport\Entities\Entity;
 
-use KMA\IikoTransport\Entities\CreateOrderSettings;
-use KMA\IikoTransport\Entities\CreateDelivery\Order;
-
-class CreateDeliveryRequest
+class CreateDeliveryRequest extends Entity
 {
-    use Jsonable;
-
     /**
      * @required
      * @var string <uuid> Organization ID
@@ -22,16 +17,16 @@ class CreateDeliveryRequest
      * @var string|null <uuid> Front group ID an order must be sent to
      * Can be obtained by /api/1/terminal_groups operation.
      */
-    public ?string $terminalGroupId;
+    public ?string $terminalGroupId = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\CreateOrderSettings|null Order creation parameters
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateOrderSettings|null Order creation parameters
      */
     public ?CreateOrderSettings $createOrderSettings = null;
 
     /**
      * @required
-     * @var \KMA\IikoTransport\Entities\CreateDelivery\Order Order
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order Order
      */
     public Order $order;
 }

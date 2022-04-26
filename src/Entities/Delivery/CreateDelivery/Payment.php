@@ -1,16 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateDelivery;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Traits\Jsonable;
+use KMA\IikoTransport\Entities\Entity;
 
 /**
  * TODO: make other TypeKind
  */
-class Payment
+class Payment extends Entity
 {
-    use Jsonable;
-
     /**
      * @required
      * @var string

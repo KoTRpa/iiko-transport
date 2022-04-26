@@ -1,8 +1,10 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-class CreateOrderSettings
+use KMA\IikoTransport\Entities\Entity;
+
+class CreateOrderSettings extends Entity
 {
     /**
      * @var int|null Timeout in seconds that specifies how much time is given for order reaching iikoFront.

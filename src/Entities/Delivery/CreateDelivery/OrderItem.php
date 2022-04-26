@@ -1,16 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\CreateDelivery;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Traits\Jsonable;
+use KMA\IikoTransport\Entities\Entity;
 
 /**
  * TODO: make compound type
  */
-class OrderItem
+class OrderItem extends Entity
 {
-    use Jsonable;
-
     /**
      * @required
      * @var string <uuid> ID of menu item
@@ -19,7 +17,7 @@ class OrderItem
     public string $productId;
 
     /**
-     * @var \KMA\IikoTransport\Entities\CreateDelivery\Modifier[]|null Modifiers
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Modifier[]|null Modifiers
      * [iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Modifier]
      */
     public ?array $modifiers = null;
