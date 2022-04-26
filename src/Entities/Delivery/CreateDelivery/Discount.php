@@ -31,4 +31,15 @@ class Discount extends Entity
      * TODO: make iikoCard discount
      */
     public string $type = 'RMS';
+
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->discountTypeId = $data['discountTypeId'];
+            $this->sum = (float)$data['sum'];
+            $this->selectivePositions = $data['selectivePositions'] ?? null;
+            $this->type = $data['type'];
+        }
+    }
 }

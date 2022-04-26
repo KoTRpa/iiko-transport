@@ -38,4 +38,16 @@ class Modifier extends Entity
      * If sent null, it generates automatically on iikoTransport side.
      */
     public ?string $positionId = null;
+
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->productId = $data['productId'];
+            $this->amount = (float)$data['amount'];
+            $this->productGroupId = $data['productGroupId'] ?? null;
+            $this->price = isset($data['price']) ? (float)$data['price'] : null;
+            $this->positionId = $data['positionId'] ?? null;
+        }
+    }
 }

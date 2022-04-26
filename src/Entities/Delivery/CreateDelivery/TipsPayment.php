@@ -5,7 +5,7 @@ namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Entities\PaymentAdditionalData;
 
-class Payment extends Entity
+class TipsPayment extends Entity
 {
     /**
      * TODO: make others TypeKind
@@ -14,6 +14,12 @@ class Payment extends Entity
      * depends on Payment class
      */
     public string $paymentTypeKind = 'Cash';
+
+    /**
+     * @var string|null <uuid> Tips type ID.
+     * Can be obtained by /api/1/tips_types operation
+     */
+    public ?string $tipsTypeId = null;
 
     /**
      * @required
@@ -49,6 +55,7 @@ class Payment extends Entity
     {
         if (null !== $data) {
             $this->paymentTypeKind = $data['paymentTypeKind'];
+            $this->tipsTypeId = $data['tipsTypeId'] ?? null;
             $this->sum = (float)$data['sum'];
             $this->paymentTypeId = $data['paymentTypeId'];
             $this->isProcessedExternally = $data['isProcessedExternally'] ?? false;

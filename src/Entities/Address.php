@@ -2,7 +2,7 @@
 
 namespace KMA\IikoTransport\Entities;
 
-class Address
+class Address extends Entity
 {
     /**
      * @required
@@ -57,4 +57,19 @@ class Address
      * @var string|null <uuid> Delivery area ID
      */
     public ?string $regionId = null;
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->street = Street::fromArray($data['street']);
+            $this->index = $data['index'] ?? null;
+            $this->house = $data['house'];
+            $this->building = $data['building'] ?? null;
+            $this->flat = $data['flat'] ?? null;
+            $this->entrance = $data['entrance'] ?? null;
+            $this->floor = $data['floor'] ?? null;
+            $this->doorphone = $data['doorphone'] ?? null;
+            $this->regionId = $data['regionId'] ?? null;
+        }
+    }
 }

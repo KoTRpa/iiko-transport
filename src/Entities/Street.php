@@ -2,7 +2,7 @@
 
 namespace KMA\IikoTransport\Entities;
 
-class Street
+class Street extends Entity
 {
     /**
      * @var string|null Street ID in classifier, e.g., address database
@@ -27,4 +27,14 @@ class Street
      * string [ 0..60 ] characters Nullable
      */
     public ?string $city = null;
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->classifierId = $data['classifierId'] ?? null;
+            $this->id = $data['id'] ?? null;
+            $this->name = $data['name'] ?? null;
+            $this->city = $data['city'] ?? null;
+        }
+    }
 }

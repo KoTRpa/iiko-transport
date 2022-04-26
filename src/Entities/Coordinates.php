@@ -2,7 +2,7 @@
 
 namespace KMA\IikoTransport\Entities;
 
-class Coordinates
+class Coordinates extends Entity
 {
     /**
      * @required
@@ -15,4 +15,13 @@ class Coordinates
      * @var float Longitude
      */
     public float $longitude;
+
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->latitude = $data['latitude'];
+            $this->longitude = $data['longitude'];
+        }
+    }
 }

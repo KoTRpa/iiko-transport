@@ -2,10 +2,7 @@
 
 namespace KMA\IikoTransport\Entities;
 
-use KMA\IikoTransport\Entities\Address;
-use KMA\IikoTransport\Entities\Coordinates;
-
-class DeliveryPoint
+class DeliveryPoint extends Entity
 {
     /**
      * @var \KMA\IikoTransport\Entities\Coordinates|null Delivery address coordinates
@@ -29,4 +26,20 @@ class DeliveryPoint
      * [0..500] characters
      */
     public ?string $comment = null;
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->coordinates = isset($data['coordinates'])
+                ? Coordinates::fromArray($data['coordinates'])
+                : null;
+
+            $this->address = isset($data['address'])
+                ? Address::fromArray($data['address'])
+                : null;
+
+            $this->externalCartographyId = $data['externalCartographyId'] ?? null;
+            $this->comment = $data['comment'] ?? null;
+        }
+    }
 }

@@ -2,12 +2,8 @@
 
 namespace KMA\IikoTransport\Entities;
 
-use KMA\IikoTransport\Traits\Jsonable;
-
-class Customer
+class Customer extends Entity
 {
-    use Jsonable;
-
     /**
      * @var string|null <uuid> Existing customer ID in RMS.
      * If null - the phone number is searched in database, otherwise the new customer is created in RMS.
@@ -47,11 +43,25 @@ class Customer
     /**
      * @var bool Whether user is included in promotional mailing list
      */
-    public bool $shouldReceivePromoActionsInfo = false;
+    public bool $shouldReceiveOrderStatusNotifications = false;
 
     /**
      * @var string Gender
      * Enum: "NotSpecified" "Male" "Female"
      */
     public string $gender = 'NotSpecified';
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->id = $data['id'] ?? null;
+            $this->name = $data['name'] ?? null;
+            $this->surname = $data['surname'] ?? null;
+            $this->comment = $data['comment'] ?? null;
+            $this->birthdate = $data['birthdate'] ?? null;
+            $this->email = $data['email'] ?? null;
+            $this->shouldReceiveOrderStatusNotifications = $data['shouldReceiveOrderStatusNotifications'] ?? false;
+            $this->gender = $data['gender'] ?? null;
+        }
+    }
 }

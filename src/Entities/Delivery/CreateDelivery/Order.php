@@ -8,6 +8,7 @@ use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Entities\DeliveryPoint;
 use KMA\IikoTransport\Entities\Customer;
 use KMA\IikoTransport\Entities\Guests;
+use KMA\IikoTransport\Entities\IikoCard5Info;
 
 class Order extends Entity
 {
@@ -90,25 +91,23 @@ class Order extends Entity
     public Collection $items;
 
     /**
-     * TODO: make combo entity
-     * @var array|null Combos included in order
+     * @var null|\Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Combo> Combos included in order
      * Array of objects (iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Combo)
      */
-    public ?array $combos = null;
+    public ?Collection $combos = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Payment[]|null Order payment components
+     * @var null|\Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Payment> Order payment components
      * [iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Payment]
      * Type IikoCard allowed from version 7.1.5
      */
-    public ?array $payments = null;
+    public ?Collection $payments = null;
 
     /**
-     * TODO: make Tip entity
-     * @var array|null Order tips components.
+     * @var null|\Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment> Order tips components.
      * Array of objects (iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.TipsPayment) Nullable
      */
-    public ?array $tips = null;
+    public ?Collection $tips = null;
 
     /**
      * @var string|null
@@ -123,20 +122,16 @@ class Order extends Entity
     public ?DiscountsInfo $discountsInfo = null;
 
     /**
-     * TODO: iikoCard entity create
-     * @var array|null Information about iikoCard5
+     * @var \KMA\IikoTransport\Entities\IikoCard5Info|null Information about iikoCard5
      */
-    public ?array $iikoCard5Info = null;
+    public ?IikoCard5Info $iikoCard5Info = null;
 
     /**
      * @param array|null $data
-     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      */
     public function __construct(?array $data = null)
     {
         if (null !== $data) {
-            $this->validateRequiredFields($data);
-
             $this->id = $data['id'] ?? null;
             $this->completeBefore = $data['completeBefore'] ?? null;
             $this->phone = $data['phone'];
@@ -158,11 +153,26 @@ class Order extends Entity
             $this->marketingSourceId = $data['marketingSourceId'] ?? null;
             $this->operatorId = $data['operatorId'] ?? null;
 
-            $this->items = collect($data['items']);
+            $this->items = collect($data['items'])->map(function(array $item): OrderItem {
+                return OrderItem::fromArray($item);
+            });
 
-            $this->combos = isset($data['combos']) ? collect($data['combos']) : null;
-            $this->payments = isset($data['payments']) ? collect($data['payments']) : null;
-            $this->tips = isset($data['tips']) ? collect($data['tips']) : null;
+            $this->combos = isset($data['combos'])
+                ? collect($data['combos'])->map(function(array $combo): Combo {
+                      return Combo::fromArray($combo);
+                  })
+                : null;
+
+            $this->payments = isset($data['payments'])
+                ? collect($data['payments'])->map(function(array $p): Payment {
+                      return Payment::fromArray($p);
+                  })
+                : null;
+            $this->tips = isset($data['tips'])
+                ? collect($data['tips'])->map(function (array $t): TipsPayment {
+                      return TipsPayment::fromArray($t);
+                  })
+                : null;
 
             $this->sourceKey = $data['sourceKey'] ?? null;
 
@@ -174,14 +184,5 @@ class Order extends Entity
                 ? IikoCard5Info::fromArray($data['iikoCard5Info'])
                 : null;
         }
-    }
-
-    protected function requiredFields(): array
-    {
-        return [
-            'phone',
-            'customer',
-            'items',
-        ];
     }
 }

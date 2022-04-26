@@ -3,6 +3,8 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Entities\Entity;
+use KMA\IikoTransport\Entities\ComboInformation;
+use Illuminate\Support\Collection;
 
 /**
  * TODO: make compound type
@@ -17,10 +19,10 @@ class OrderItem extends Entity
     public string $productId;
 
     /**
-     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Modifier[]|null Modifiers
+     * @var null|\Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Modifier> Modifiers
      * [iikoTransport.PublicApi.Contracts.Deliveries.Request.CreateOrder.Modifier]
      */
-    public ?array $modifiers = null;
+    public ?Collection $modifiers = null;
 
     /**
      * @var float|null Price per item unit
@@ -57,14 +59,38 @@ class OrderItem extends Entity
     public ?string $productSizeId = null;
 
     /**
-     * TODO: make combo information entity
-     * @var array|null Combo details if combo includes order item
+     * @var \KMA\IikoTransport\Entities\ComboInformation|null Combo details if combo includes order item
      */
-    public ?array $comboInformation = null;
+    public ?ComboInformation $comboInformation = null;
 
     /**
      * @var string|null Comment
      * [0..255] characters
      */
     public ?string $comment = null;
+
+    public function __construct(?array $data = null)
+    {
+        if (null !== $data) {
+            $this->productId = $data['productId'];
+
+            $this->modifiers = isset($data['modifiers'])
+                ? collect($data['modifiers'])->map(function(array $m): Modifier {
+                      return Modifier::fromArray($m);
+                  })
+                : null;
+
+            $this->price = isset($data['price']) ? (float)$data['price'] : null;
+            $this->positionId = $data['positionId'] ?? null;
+            $this->type = $data['type'];
+            $this->amount = (float)$data['amount'];
+            $this->productSizeId = $data['productSizeId'] ?? null;
+
+            $this->comboInformation = isset($data['comboInformation'])
+                ? ComboInformation::fromArray($data['comboInformation'])
+                : null;
+
+            $this->comment = $data['comment'] ?? null;
+        }
+    }
 }
