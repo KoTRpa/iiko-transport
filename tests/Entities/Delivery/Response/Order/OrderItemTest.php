@@ -34,7 +34,7 @@ class OrderItemTest extends EntityTestCase
     protected function assertFieldValidity(mixed $entity): void
     {
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Delivery\Response\Order\Product::class,
+            \KMA\IikoTransport\Entities\Delivery\Response\Order\OrderItemProduct::class,
             $entity->product
         );
 
