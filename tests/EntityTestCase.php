@@ -49,4 +49,11 @@ abstract class EntityTestCase extends \PHPUnit\Framework\TestCase
         $pattern = '/^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i';
         $this->assertMatchesRegularExpression($pattern, $uuid, $message);
     }
+
+    protected function assertIsDateTimeString(string $value, $message = '')
+    {
+        // <yyyy-MM-dd HH:mm:ss.fff>
+        $pattern = '/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\.\d{3}$/i';
+        $this->assertMatchesRegularExpression($pattern, $value, $message);
+    }
 }

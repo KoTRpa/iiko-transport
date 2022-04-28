@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\Response\Order\Delivery\Response\Order\Response\Order\Response\Order\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
 

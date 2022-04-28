@@ -1,20 +1,19 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Delivery\Response\Order\Delivery\Response\Order\Response\Order\Response\Order\CreateDelivery;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\Response\Order\Delivery\Response\Order\Response\Order\Response\Order\Response\Order;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
 
-class ComboTest extends EntityTestCase
+class OrderComboTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/Combo.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Combo::class;
+    protected string $jsonPath = __DIR__ . '/OrderCombo.json';
+    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\Order\OrderCombo::class;
     protected array $fields = [
         'id',
         'name',
         'amount',
         'price',
         'sourceId',
-        'programId',
     ];
 
     public function testEntityCreate()
@@ -33,7 +32,5 @@ class ComboTest extends EntityTestCase
         $this->assertIsFloat($entity->price);
 
         $this->assertIsUuid($entity->sourceId);
-
-        $this->assertIsUuid($entity->programId);
     }
 }
