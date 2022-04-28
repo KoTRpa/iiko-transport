@@ -2,8 +2,6 @@
 
 namespace KMA\IikoTransport\Tests;
 
-use phpDocumentor\Reflection\ProjectFactory;
-
 abstract class EntityTestCase extends \PHPUnit\Framework\TestCase
 {
     protected string $jsonPath;

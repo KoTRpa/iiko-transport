@@ -6,7 +6,7 @@ use KMA\IikoTransport\Tests\EntityTestCase;
 
 class CreateDeliveryRequestTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/json/CreateDeliveryRequest.json';
+    protected string $jsonPath = __DIR__ . '/CreateDeliveryRequest.json';
     protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest::class;
     protected array $fields = [
         'organizationId',

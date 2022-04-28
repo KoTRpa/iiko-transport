@@ -6,7 +6,7 @@ use KMA\IikoTransport\Tests\EntityTestCase;
 
 class OrderTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/json/Order.json';
+    protected string $jsonPath = __DIR__ . '/Order.json';
     protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::class;
     protected array $fields = [
         'id',

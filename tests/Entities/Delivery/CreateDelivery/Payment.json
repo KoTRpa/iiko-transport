@@ -1,0 +1,12 @@
+{
+    "paymentTypeKind": "string",
+    "sum": 0,
+    "paymentTypeId": "a681b746-24d1-4f1c-aa71-6af3f1e19567",
+    "isProcessedExternally": true,
+    "paymentAdditionalData": {
+        "credential": "string",
+        "searchScope": "Reserved",
+        "type": "IikoCard"
+    },
+    "isFiscalizedExternally": true
+}

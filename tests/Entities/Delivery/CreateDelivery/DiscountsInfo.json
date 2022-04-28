@@ -1,0 +1,15 @@
+{
+    "card": {
+        "track": "string"
+    },
+    "discounts": [
+        {
+            "discountTypeId": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "sum": 1,
+            "selectivePositions": [
+                "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+            ],
+            "type": "RMS"
+        }
+    ]
+}

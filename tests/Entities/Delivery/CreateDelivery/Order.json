@@ -58,7 +58,9 @@
                     "positionId": "b4513563-032a-4dbc-8894-4b05c402f7de"
                 }
             ],
-            "type": "string",
+            "price": 1.0,
+            "positionId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+            "type": "Product",
             "amount": 0,
             "productSizeId": "b4513563-032a-4dbc-8894-4b05c402f7de",
             "comboInformation": {
@@ -120,7 +122,7 @@
                 "selectivePositions": [
                     "497f6eca-6276-4993-bfeb-53cbbbba6f08"
                 ],
-                "type": "string"
+                "type": "RMS"
             }
         ]
     },

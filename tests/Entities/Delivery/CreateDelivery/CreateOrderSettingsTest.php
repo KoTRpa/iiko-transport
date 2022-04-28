@@ -6,7 +6,7 @@ use KMA\IikoTransport\Tests\EntityTestCase;
 
 class CreateOrderSettingsTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/json/CreateOrderSettings.json';
+    protected string $jsonPath = __DIR__ . '/CreateOrderSettings.json';
     protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateOrderSettings::class;
     protected array $fields = [
         'transportToFrontTimeout',

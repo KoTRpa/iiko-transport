@@ -1,0 +1,23 @@
+{
+    "productId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+    "modifiers": [
+        {
+            "productId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+            "amount": 1,
+            "productGroupId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+            "price": 12.5,
+            "positionId": "b4513563-032a-4dbc-8894-4b05c402f7de"
+        }
+    ],
+    "price": 1.0,
+    "positionId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+    "type": "Product",
+    "amount": 0,
+    "productSizeId": "b4513563-032a-4dbc-8894-4b05c402f7de",
+    "comboInformation": {
+        "comboId": "1fa22bdf-8ea5-4d3f-a6cf-3abb16e9aa74",
+        "comboSourceId": "dd3c663c-f4a0-4960-be17-31d91758b3a4",
+        "comboGroupId": "2cb9710d-2ed9-4514-8333-275a9727b4dd"
+    },
+    "comment": "string"
+}
