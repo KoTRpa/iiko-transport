@@ -7,7 +7,7 @@ use KMA\IikoTransport\Tests\EntityTestCase;
 class RemovalTypeTest extends EntityTestCase
 {
     protected string $jsonPath = __DIR__ . '/RemovalType.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\Order\Deleted\RemovalType::class;
+    protected string $entityClass = \KMA\IIkoTransport\Entities\Delivery\Response\Order\Deleted\RemovalType::class;
     protected array $fields = [
         'id',
         'name',

@@ -20,7 +20,7 @@ class DeletedTest extends EntityTestCase
     protected function assertFieldValidity(mixed $entity): void
     {
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Delivery\Response\Order\DeletionMethod::class,
+            \KMA\IikoTransport\Entities\Delivery\Response\Order\Deleted\DeletionMethod::class,
             $entity->deletionMethod
         );
     }

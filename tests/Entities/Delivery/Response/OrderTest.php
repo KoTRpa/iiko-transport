@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Delivery\Response\Order\Delivery\Response\Order\Response\Order\Response\Order\Response;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\Response;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
 
@@ -70,7 +70,7 @@ class OrderTest extends EntityTestCase
         $this->assertIsString($entity->phone);
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\DeliveryPoint::class,
+            \KMA\IikoTransport\Entities\Delivery\Response\Order\DeliveryPoint::class,
             $entity->deliveryPoint
         );
 
@@ -113,7 +113,7 @@ class OrderTest extends EntityTestCase
         );
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Response\Order\Operator::class,
+            \KMA\IikoTransport\Entities\Delivery\Response\Order\Operator::class,
             $entity->operator
         );
 

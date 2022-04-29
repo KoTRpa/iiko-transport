@@ -7,7 +7,7 @@ use KMA\IikoTransport\Tests\EntityTestCase;
 class DeletionMethodTest extends EntityTestCase
 {
     protected string $jsonPath = __DIR__ . '/DeletionMethod.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\Order\DeletionMethod::class;
+    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\Order\Deleted\DeletionMethod::class;
     protected array $fields = [
         'id',
         'comment',
@@ -24,7 +24,7 @@ class DeletionMethodTest extends EntityTestCase
         $this->assertIsUuid($entity->id);
         $this->assertIsString($entity->comment);
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Delivery\Response\Order\Deleted\RemovalType::class,
+            \KMA\IIkoTransport\Entities\Delivery\Response\Order\Deleted\RemovalType::class,
             $entity->removalType
         );
     }

@@ -1,12 +1,12 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Delivery\Response\Order\Delivery\Response\Order\Response\Order\Response\Order\Response;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\Response;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
 
 class OrderInfoTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/DeliveryOrderInfo.json';
+    protected string $jsonPath = __DIR__ . '/OrderInfo.json';
     protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\OrderInfo::class;
     protected array $fields = [
         'id',
@@ -34,7 +34,7 @@ class OrderInfoTest extends EntityTestCase
         );
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\ErrorInfo::class,
+            \KMA\IikoTransport\Entities\Delivery\Response\ErrorInfo::class,
             $entity->errorInfo
         );
 

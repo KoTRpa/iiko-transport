@@ -1,13 +1,13 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Delivery\Response\Order\Delivery\Response\Order\Response\Order\Response\Order\Response\Order;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\Response\Order;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
 
 class TipsPaymentTest extends EntityTestCase
 {
     protected string $jsonPath = __DIR__ . '/TipsPayment.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\Order\TipsPayment::class;
+    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\Order\TipsPaymentItem::class;
     protected array $fields = [
         'tipsType',
         'paymentType',
