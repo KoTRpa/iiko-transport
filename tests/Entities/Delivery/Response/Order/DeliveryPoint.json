@@ -1,0 +1,29 @@
+{
+    "coordinates": {
+        "latitude": 0,
+        "longitude": 0
+    },
+    "address": {
+        "street": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "string",
+            "city": {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "name": "string"
+            }
+        },
+        "index": "string",
+        "house": "string",
+        "building": "string",
+        "flat": "string",
+        "entrance": "string",
+        "floor": "string",
+        "doorphone": "string",
+        "region": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "string"
+        }
+    },
+    "externalCartographyId": "string",
+    "comment": "string"
+}
