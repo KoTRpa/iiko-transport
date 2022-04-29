@@ -23,7 +23,7 @@ class DiscountItemTest extends EntityTestCase
     {
         $this->assertInstanceOf(
             \KMA\IikoTransport\Entities\Delivery\Response\Order\DiscountType::class,
-            $entity->discountTypeId
+            $entity->discountType
         );
         $this->assertIsFloat($entity->sum);
         $this->assertIsArray($entity->selectivePositions);

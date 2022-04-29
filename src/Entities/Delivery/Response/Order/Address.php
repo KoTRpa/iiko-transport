@@ -72,7 +72,7 @@ class Address extends Entity
             $this->entrance = $data['entrance'] ?? null;
             $this->floor = $data['floor'] ?? null;
             $this->doorphone = $data['doorphone'] ?? null;
-            $this->region = Region::fromArray($data['regionId']);
+            $this->region = Region::fromArray($data['region']);
         }
     }
 }

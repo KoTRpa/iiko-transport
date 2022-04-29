@@ -20,7 +20,7 @@ class GuestsInfoTest extends EntityTestCase
 
     protected function assertFieldValidity(mixed $entity): void
     {
-        $this->assertIsInt($entity->id);
+        $this->assertIsInt($entity->count);
         $this->assertIsBool($entity->splitBetweenPersons);
     }
 }

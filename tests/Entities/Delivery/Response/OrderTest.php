@@ -221,6 +221,6 @@ class OrderTest extends EntityTestCase
 
         $this->assertIsUuid($entity->terminalGroupId);
 
-        $this->assertIsInt($entity->processedPaymentsSum);
+        $this->assertIsFloat($entity->processedPaymentsSum);
     }
 }

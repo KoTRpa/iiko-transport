@@ -115,7 +115,7 @@ class OrderItem extends Entity
                 ? Size::fromArray($data['size'])
                 : null;
             $this->comboInformation = isset($data['comboInformation'])
-                ? ComboInformation::fromArray($data['size'])
+                ? ComboInformation::fromArray($data['comboInformation'])
                 : null;
         }
     }

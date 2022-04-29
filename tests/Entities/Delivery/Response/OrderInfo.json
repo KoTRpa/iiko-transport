@@ -117,7 +117,47 @@
         },
         "items": [
             {
-                "type": "string",
+                "product": {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "name": "string"
+                },
+                "modifiers": [
+                    {
+                        "product": {
+                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                            "name": "string"
+                        },
+                        "amount": 1.0,
+                        "amountIndependentOfParentAmount": true,
+                        "productGroup": {
+                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                            "name": "string"
+                        },
+                        "price": 1.0,
+                        "pricePredefined": true,
+                        "resultSum": 1.0,
+                        "deleted": {
+                            "deletionMethod": {
+                                "id": "string",
+                                "comment": "string",
+                                "removalType": {
+                                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                                    "name": "string"
+                                }
+                            }
+                        },
+                        "positionId": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                        "defaultAmount": 0,
+                        "hideIfDefaultAmount": true,
+                        "taxPercent": 1.0
+                    }
+                ],
+                "price": 1.0,
+                "cost": 1.0,
+                "pricePredefined": true,
+                "positionId": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "taxPercent": 1.0,
+                "type": "Product",
                 "status": "Added",
                 "deleted": {
                     "deletionMethod": {

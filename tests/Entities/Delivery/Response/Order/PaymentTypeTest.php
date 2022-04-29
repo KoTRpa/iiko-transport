@@ -6,7 +6,7 @@ use KMA\IikoTransport\Tests\EntityTestCase;
 
 class PaymentTypeTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/DiscountType.json';
+    protected string $jsonPath = __DIR__ . '/PaymentType.json';
     protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\Response\Order\PaymentType::class;
     protected array $fields = [
         'id',

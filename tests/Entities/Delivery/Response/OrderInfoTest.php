@@ -40,7 +40,7 @@ class OrderInfoTest extends EntityTestCase
 
         $this->assertInstanceOf(
             \KMA\IikoTransport\Entities\Delivery\Response\Order::class,
-            $entity->createOrderSettings
+            $entity->order
         );
     }
 }

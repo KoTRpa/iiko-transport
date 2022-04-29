@@ -22,7 +22,7 @@ class CourierInfoTest extends EntityTestCase
     {
         $this->assertInstanceOf(
             \KMA\IikoTransport\Entities\Delivery\Response\Order\Courier::class,
-            $entity->id
+            $entity->courier
         );
         $this->assertIsBool($entity->isCourierSelectedManually);
     }

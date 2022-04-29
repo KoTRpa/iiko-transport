@@ -21,7 +21,7 @@ class DeletionMethodTest extends EntityTestCase
 
     protected function assertFieldValidity(mixed $entity): void
     {
-        $this->assertIsUuid($entity->id);
+        $this->assertIsString($entity->id);
         $this->assertIsString($entity->comment);
         $this->assertInstanceOf(
             \KMA\IIkoTransport\Entities\Delivery\Response\Order\Deleted\RemovalType::class,
