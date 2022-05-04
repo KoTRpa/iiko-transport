@@ -3,7 +3,7 @@
 namespace KMA\IikoTransport\Endpoints;
 
 use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
-use KMA\IikoTransport\Http\Response;
+use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
 
 /**
  * Nomenclature APIs
@@ -16,11 +16,12 @@ trait Delivery
 {
     /**
      * @param \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest $request
-     * @return \KMA\IikoTransport\Http\Response
+     * @return \KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \JsonException
      */
-    public function createDelivery(CreateDeliveryRequest $request): Response
+    public function createDelivery(CreateDeliveryRequest $request): CreateDeliveryResponse
     {
         $endpoint = 'deliveries/create';
 
@@ -30,8 +31,6 @@ trait Delivery
             'Authorization' => 'Bearer ' . $this->accessToken()
         ]);
 
-        // $data = $response->getDecodedBody();
-
-        return $response;
+        return CreateDeliveryResponse::fromJson($response->getBody());
     }
 }
