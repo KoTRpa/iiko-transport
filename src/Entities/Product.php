@@ -2,9 +2,7 @@
 
 namespace KMA\IikoTransport\Entities;
 
-use KMA\IikoTransport\Traits\Jsonable;
-use KMA\IikoTransport\Enums\OrderItemType;
-use KMA\IikoTransport\Enums\ProductType;
+use KMA\IikoTransport\Contracts\Jsonable;
 
 class Product
 {

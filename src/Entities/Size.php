@@ -2,7 +2,7 @@
 
 namespace KMA\IikoTransport\Entities;
 
-use KMA\IikoTransport\Traits\Jsonable;
+use KMA\IikoTransport\Contracts\Jsonable;
 
 class Size
 {
