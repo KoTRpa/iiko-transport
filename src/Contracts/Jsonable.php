@@ -2,6 +2,12 @@
 
 namespace KMA\IikoTransport\Contracts;
 
+
+/**
+ * From and to json conversions
+ *
+ * @mixin \KMA\IikoTransport\Entities\Entity
+ */
 trait Jsonable
 {
     /**

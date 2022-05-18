@@ -11,7 +11,7 @@ trait RequiredFields
      * @return void
      * @throws MissingRequiredFieldException
      */
-    public function validateRequiredFields(array $source)
+    public function validateRequiredFields(array $source): void
     {
         foreach ($this->requiredFields() as $r) {
             if (!isset($source[$r])) {
