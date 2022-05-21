@@ -14,7 +14,7 @@ class AuthTest extends TestCase
     /**
      * @covers \KMA\IikoTransport\IikoTransport::accessToken
      */
-    public function testNomenclature()
+    public function testAccessToken()
     {
         $jsonAuth = file_get_contents(dirname(__DIR__) . '/Fixtures/Endpoints/auth.json');
 
