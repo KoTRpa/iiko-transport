@@ -21,6 +21,7 @@ trait Menu
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \Psr\Http\Client\ClientExceptionInterface
@@ -29,7 +30,7 @@ trait Menu
     {
         $res = $this->post(
             'nomenclature',
-            $req->toJson(),
+            $req,
             ['Authorization' => 'Bearer ' . $this->accessToken()]
         );
 

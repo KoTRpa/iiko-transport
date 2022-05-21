@@ -2,6 +2,7 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
+use KMA\IikoTransport\Entities\Authorization\AccessTokenRequest;
 use KMA\IikoTransport\Exceptions\MissingTokenException;
 use KMA\IikoTransport\Helpers\Json;
 
@@ -21,12 +22,17 @@ trait Auth
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      */
     public function accessToken(): string
     {
-        $endpoint = 'access_token';
-        $apiLogin = $this->getConfig('login');
-        $response = $this->post($endpoint, json_encode(['apiLogin' => $apiLogin]));
+        $response = $this->post(
+            'access_token',
+            new AccessTokenRequest([
+                'apiLogin' => $this->getConfig('login')
+            ])
+        );
+
         $body = Json::json_decode($response->getBody(), true);
 
         if (empty($body['token'])) {

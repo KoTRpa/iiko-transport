@@ -3,10 +3,11 @@
 namespace KMA\IikoTransport\Entities\Menu;
 
 use JetBrains\PhpStorm\ArrayShape;
+use KMA\IikoTransport\Contracts\IRequestBody;
 use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Exceptions\MissingRequiredFieldException;
 
-class NomenclatureRequest extends Entity
+class NomenclatureRequest extends Entity implements IRequestBody
 {
     /**
      * @required
@@ -21,12 +22,17 @@ class NomenclatureRequest extends Entity
      */
     public ?int $startRevision = null;
 
+    const ATTRIBUTES = [
+        'organizationId' => 'string',
+        'startRevision' => 'int'
+    ];
+
     /**
      * @param array|null $data
      * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      */
     public function __construct(
-        #[ArrayShape(['organizationId' => 'string', 'startRevision' => 'int'])]
+        #[ArrayShape(self::ATTRIBUTES)]
         ?array $data = null
     )
     {

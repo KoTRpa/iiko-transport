@@ -5,6 +5,7 @@ namespace KMA\IikoTransport\Http;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
+use KMA\IikoTransport\Contracts\IRequestBody;
 use KMA\IikoTransport\Exceptions\ResponseException;
 use Psr\Http\Message\ResponseInterface;
 
@@ -60,19 +61,19 @@ trait Http
      * Sends a POST request to API and returns the result.
      *
      * @param string $endpoint
-     * @param string|null $body JSON encoded string
+     * @param \KMA\IikoTransport\Contracts\IRequestBody|null $body JSON encoded string
      * @param array $params
      * @param array $headers
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     * @throws \KMA\IikoTransport\Exceptions\ResponseException
      */
-    protected function post(string $endpoint, string $body = null, array $params = [], array $headers = []): ResponseInterface
+    protected function post(string $endpoint, IRequestBody $body = null, array $params = [], array $headers = []): ResponseInterface
     {
-        return $this->send('POST', $endpoint, $body, $params, $headers);
+        return $this->send('POST', $endpoint, $body->toJson(), $params, $headers);
     }
 
     /**
@@ -86,9 +87,8 @@ trait Http
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Psr\Http\Client\ClientExceptionInterface
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function send(string $method, string $endpoint, string $body = null, array $params = [], array $headers = []): ResponseInterface
     {
