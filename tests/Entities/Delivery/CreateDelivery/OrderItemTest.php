@@ -20,6 +20,11 @@ class OrderItemTest extends EntityTestCase
         'comment',
     ];
 
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem::fromJson
+     */
     public function testEntityCreate()
     {
         $this->runCreateTests();

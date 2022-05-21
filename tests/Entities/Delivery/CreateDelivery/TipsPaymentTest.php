@@ -18,6 +18,11 @@ class TipsPaymentTest extends EntityTestCase
         'isFiscalizedExternally',
     ];
 
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment::fromJson
+     */
     public function testEntityCreate()
     {
         $this->runCreateTests();

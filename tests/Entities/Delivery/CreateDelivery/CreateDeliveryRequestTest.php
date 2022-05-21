@@ -15,6 +15,12 @@ class CreateDeliveryRequestTest extends EntityTestCase
         'order',
     ];
 
+
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest::fromJson
+     */
     public function testCreateEntity(): void
     {
         $this->runCreateTests();

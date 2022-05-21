@@ -6,9 +6,9 @@ use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
 use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
 
 /**
- * Nomenclature APIs
+ * Delivery APIs
  *
- * @mixin \KMA\IikoTransport\Traits\Http
+ * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
  * @mixin \KMA\IikoTransport\Endpoints\Auth
  */

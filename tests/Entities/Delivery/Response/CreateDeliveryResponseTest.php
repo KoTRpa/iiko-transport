@@ -13,6 +13,13 @@ class CreateDeliveryResponseTest extends EntityTestCase
         'orderInfo',
     ];
 
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse::fromJson
+     *
+     * @uses \KMA\IikoTransport\Entities\Delivery\Response\OrderInfo
+     */
     public function testCreateEntity(): void
     {
         $this->runCreateTests();

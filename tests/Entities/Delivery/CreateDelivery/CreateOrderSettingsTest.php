@@ -12,7 +12,11 @@ class CreateOrderSettingsTest extends EntityTestCase
         'transportToFrontTimeout',
     ];
 
-
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateOrderSettings::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateOrderSettings::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateOrderSettings::fromJson
+     */
     public function testCreateEntity()
     {
         $this->runCreateTests();

@@ -2,13 +2,13 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Requests\OrganizationsRequest;
 use KMA\IikoTransport\Entities\Organization;
+use KMA\IikoTransport\Entities\Requests\OrganizationsRequest;
 
 /**
  * Nomenclature APIs
  *
- * @mixin \KMA\IikoTransport\Traits\Http
+ * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
  * @mixin \KMA\IikoTransport\Endpoints\Auth
  */

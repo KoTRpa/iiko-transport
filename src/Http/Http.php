@@ -1,21 +1,26 @@
 <?php
 
-namespace KMA\IikoTransport\Traits;
+namespace KMA\IikoTransport\Http;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Psr7\Request;
-use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\RequestOptions;
 use KMA\IikoTransport\Exceptions\ResponseException;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @mixin \KMA\IikoTransport\IikoTransport
  */
 trait Http
 {
-    /** @var \GuzzleHttp\Client|null http requests handler */
+    /**
+     * @var \GuzzleHttp\Client|null http requests handler
+     */
     protected ?Client $client = null;
 
+    /**
+     * @var array default GuzzleHttp\Client params
+     */
     protected array $defaultParams = [
         'base_uri' => 'https://api-ru.iiko.services/api/1/',
         RequestOptions::CONNECT_TIMEOUT => 10,  // Connection timeout of the request in seconds
@@ -23,6 +28,9 @@ trait Http
         RequestOptions::HTTP_ERRORS => false,
     ];
 
+    /**
+     * @var array Default request headers
+     */
     protected array $defaultHeaders = [
         'Content-Type' => 'application/json',
         'Accept' => 'application/json',

@@ -17,6 +17,11 @@ class ComboTest extends EntityTestCase
         'programId',
     ];
 
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Combo::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Combo::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Combo::fromJson
+     */
     public function testEntityCreate()
     {
         $this->runCreateTests();

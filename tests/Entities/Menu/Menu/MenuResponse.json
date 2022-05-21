@@ -1,0 +1,135 @@
+{
+    "correlationId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+    "groups": [
+        {
+            "imageLinks": [
+                "string"
+            ],
+            "parentGroup": "258adf23-5b0c-4f5d-8998-e5cc7a8451dd",
+            "order": 0,
+            "isIncludedInMenu": true,
+            "isGroupModifier": true,
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "code": "string",
+            "name": "string",
+            "description": "string",
+            "additionalInfo": "string",
+            "tags": [
+                "string"
+            ],
+            "isDeleted": true,
+            "seoDescription": "string",
+            "seoText": "string",
+            "seoKeywords": "string",
+            "seoTitle": "string"
+        }
+    ],
+    "productCategories": [
+        {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "string",
+            "isDeleted": true
+        }
+    ],
+    "products": [
+        {
+            "fatAmount": 0,
+            "proteinsAmount": 0,
+            "carbohydratesAmount": 0,
+            "energyAmount": 0,
+            "fatFullAmount": 0,
+            "proteinsFullAmount": 0,
+            "carbohydratesFullAmount": 0,
+            "energyFullAmount": 0,
+            "weight": 0,
+            "groupId": "eb54e96e-21b8-4f54-9cd4-80fccbd06f55",
+            "productCategoryId": "1e32231d-b8a1-4145-b539-820301c2af64",
+            "type": "string",
+            "orderItemType": "Product",
+            "modifierSchemaId": "51a77930-ad82-4138-b68f-0d444ed97b5f",
+            "modifierSchemaName": "string",
+            "splittable": true,
+            "measureUnit": "string",
+            "sizePrices": [
+                {
+                    "sizeId": "f98600f7-1d0f-4a64-936e-93e133055658",
+                    "price": {
+                        "currentPrice": 0,
+                        "isIncludedInMenu": true,
+                        "nextPrice": 0,
+                        "nextIncludedInMenu": true,
+                        "nextDatePrice": "2019-08-24 14:15:22.123"
+                    }
+                }
+            ],
+            "modifiers": [
+                {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "defaultAmount": 0,
+                    "minAmount": 0,
+                    "maxAmount": 0,
+                    "required": true,
+                    "hideIfDefaultAmount": true,
+                    "splittable": true,
+                    "freeOfChargeAmount": 0
+                }
+            ],
+            "groupModifiers": [
+                {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "minAmount": 0,
+                    "maxAmount": 0,
+                    "required": true,
+                    "childModifiersHaveMinMaxRestrictions": true,
+                    "childModifiers": [
+                        {
+                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                            "defaultAmount": 0,
+                            "minAmount": 0,
+                            "maxAmount": 0,
+                            "required": true,
+                            "hideIfDefaultAmount": true,
+                            "splittable": true,
+                            "freeOfChargeAmount": 0
+                        }
+                    ],
+                    "hideIfDefaultAmount": true,
+                    "defaultAmount": 0,
+                    "splittable": true,
+                    "freeOfChargeAmount": 0
+                }
+            ],
+            "imageLinks": [
+                "string"
+            ],
+            "doNotPrintInCheque": true,
+            "parentGroup": "258adf23-5b0c-4f5d-8998-e5cc7a8451dd",
+            "order": 0,
+            "fullNameEnglish": "string",
+            "useBalanceForSell": true,
+            "canSetOpenPrice": true,
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "code": "string",
+            "name": "string",
+            "description": "string",
+            "additionalInfo": "string",
+            "tags": [
+                "string"
+            ],
+            "isDeleted": true,
+            "seoDescription": "string",
+            "seoText": "string",
+            "seoKeywords": "string",
+            "seoTitle": "string"
+        }
+    ],
+    "sizes": [
+        {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "string",
+            "priority": 0,
+            "isDefault": true
+        }
+    ],
+    "revision": 0
+}

@@ -8,7 +8,7 @@ use KMA\IikoTransport\Entities\TerminalGroup;
 /**
  * Nomenclature APIs
  *
- * @mixin \KMA\IikoTransport\Traits\Http
+ * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
  * @mixin \KMA\IikoTransport\Endpoints\Auth
  */

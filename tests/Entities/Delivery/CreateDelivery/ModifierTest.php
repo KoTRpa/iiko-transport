@@ -16,6 +16,11 @@ class ModifierTest extends EntityTestCase
         'positionId',
     ];
 
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Modifier::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Modifier::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Modifier::fromJson
+     */
     public function testEntityCreate()
     {
         $this->runCreateTests();

@@ -29,6 +29,11 @@ class OrderTest extends EntityTestCase
         'iikoCard5Info',
     ];
 
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::fromJson
+     */
     public function testEntityCreate()
     {
         $this->runCreateTests();

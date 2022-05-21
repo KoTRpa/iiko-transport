@@ -17,6 +17,11 @@ class PaymentTest extends EntityTestCase
         'isFiscalizedExternally',
     ];
 
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Payment::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Payment::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Payment::fromJson
+     */
     public function testEntityCreate()
     {
         $this->runCreateTests();

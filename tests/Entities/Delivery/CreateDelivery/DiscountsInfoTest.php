@@ -13,6 +13,12 @@ class DiscountsInfoTest extends EntityTestCase
         'discounts',
     ];
 
+
+    /**
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo::__construct
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo::fromArray
+     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo::fromJson
+     */
     public function testEntityCreate()
     {
         $this->runCreateTests();

@@ -2,23 +2,31 @@
 
 namespace KMA\IikoTransport;
 
-use KMA\IikoTransport\Endpoints;
+use JetBrains\PhpStorm\ArrayShape;
 use JsonMapper;
+use KMA\IikoTransport\Endpoints;
 
 class IikoTransport
 {
-    use Traits\Http;
+    use Http\Http;
 
     use Endpoints\Auth,
         Endpoints\Dictionaries,
-        Endpoints\Nomenclature,
+        Endpoints\Menu,
         Endpoints\Delivery,
         Endpoints\Organizations,
         Endpoints\TerminalGroups;
 
     protected JsonMapper $mapper;
 
-    public function __construct(protected array $config) {
+    public function __construct(
+        #[ArrayShape([
+            'url' => 'string',
+            'login' => 'string',
+            'http' => 'array'
+        ])]
+        protected array $config
+    ) {
         $this->mapper = new JsonMapper();
         $this->mapper->bEnforceMapType = false;
     }
