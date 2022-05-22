@@ -17,17 +17,17 @@ trait Delivery
     /**
      * @param \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest $request
      * @return \KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse
-     * @throws \KMA\IikoTransport\Exceptions\ResponseException
-     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      */
     public function createDelivery(CreateDeliveryRequest $request): CreateDeliveryResponse
     {
         $endpoint = 'deliveries/create';
 
-        $params = (array)$request;
-
-        $response = $this->post($endpoint, $params, [
+        $response = $this->post($endpoint, $request, [
             'Authorization' => 'Bearer ' . $this->accessToken()
         ]);
 

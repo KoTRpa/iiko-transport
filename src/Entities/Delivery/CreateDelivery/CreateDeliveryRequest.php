@@ -2,10 +2,12 @@
 
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
+use JetBrains\PhpStorm\ArrayShape;
+use KMA\IikoTransport\Contracts\IRequestBody;
 use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Exceptions\MissingRequiredFieldException;
 
-class CreateDeliveryRequest extends Entity
+class CreateDeliveryRequest extends Entity implements IRequestBody
 {
     /**
      * @required
@@ -32,11 +34,22 @@ class CreateDeliveryRequest extends Entity
     public Order $order;
 
 
+    const ATTRIBUTES = [
+        'organizationId' => 'string',
+        'terminalGroupId' => 'string',
+        'createOrderSettings' => CreateOrderSettings::class,
+        'order' => Order::class,
+    ];
+
+
     /**
      * @param array|null $data
      * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      */
-    public function __construct(?array $data = null)
+    public function __construct(
+        #[ArrayShape(self::ATTRIBUTES)]
+        ?array $data = null
+    )
     {
         if (null !== $data) {
             if (!isset($data['organizationId'])) {
