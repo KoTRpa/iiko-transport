@@ -1,13 +1,13 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities;
+namespace KMA\IikoTransport\Tests\Entities\Common;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
 
 class CoordinatesTest extends EntityTestCase
 {
     protected string $jsonPath = __DIR__ . '/Coordinates.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Coordinates::class;
+    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Coordinates::class;
     protected array $fields = [
         'latitude',
         'longitude',

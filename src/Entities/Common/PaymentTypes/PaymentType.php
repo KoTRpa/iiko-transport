@@ -1,12 +1,12 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\Common\PaymentTypes;
 
-use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Enums\PaymentTypeKind;
+use KMA\IikoTransport\Entities\Entity;
+use KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup;
 
-class PaymentType
+class PaymentType extends Entity
 {
     /**
      * @var string|null <uuid> Payment type ID
@@ -69,10 +69,9 @@ class PaymentType
     public ?string $paymentTypeKind = null;
 
     /**
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\TerminalGroupItem>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup>
      * Terminal groups where this payment type is available
      * @required
-     * TODO: replace with actual TerminalGroup
      */
     public Collection $terminalGroups;
 
@@ -94,9 +93,9 @@ class PaymentType
             $this->paymentProcessingType = $data['paymentProcessingType'] ?? null;
             $this->paymentTypeKind = $data['paymentTypeKind'] ?? null;
 
-            $this->terminalGroups = \collect($data['terminalGroups'])->map(function ($tg) {
-                return TerminalGroupItem::fromArray($tg);
-            });
+            $this->terminalGroups =
+                collect($data['terminalGroups'])
+                    ->map(fn (array $tg): TerminalGroup => TerminalGroup::fromArray($tg));
         }
     }
 
@@ -128,14 +127,5 @@ class PaymentType
         if (!isset($data['terminalGroups']) || !is_array($data['terminalGroups'])) {
             throw new \InvalidArgumentException('Field "terminalGroups" is undefined or not array type');
         }
-    }
-
-    /**
-     * @param array $data
-     * @return static
-     */
-    public static function fromArray(array $data): static
-    {
-        return new static($data);
     }
 }

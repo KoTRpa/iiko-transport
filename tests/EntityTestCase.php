@@ -2,30 +2,55 @@
 
 namespace KMA\IikoTransport\Tests;
 
+use JetBrains\PhpStorm\ArrayShape;
+use JetBrains\PhpStorm\Deprecated;
+use KMA\IikoTransport\Tests\JsonFactory;
+
 abstract class EntityTestCase extends \PHPUnit\Framework\TestCase
 {
-    protected string $jsonPath;
-    protected string $json;
+    /**
+     * @var array json fixture namespace (name eg. path in Fixtures) and opt path to json part
+     */
+    #[ArrayShape(['name' => 'string' , 'path' => 'string'])]
+    protected array $fixture = [];
+
+    #[Deprecated]
+    protected string $jsonPath = '';
+
+    /**
+     * @var string loaded json fixture
+     */
+    private string $json;
+
+    /**
+     * @var string[] of all entity attributes
+     */
     protected array $fields;
+
+    /**
+     * @var string testing entity full classname
+     */
     protected string $entityClass;
 
     protected function setUp(): void
     {
-        $this->json = file_get_contents($this->jsonPath);
+        /**
+         * @deprecated will be removed after all old entity test upgrade
+         * TODO: remove after old test upgrade to fixtures
+         */
+        if ($this->jsonPath) {
+            $this->json = file_get_contents($this->jsonPath);
+        }
+
+        if (isset($this->fixture['name'])) {
+            $this->json = JsonFactory::load($this->fixture['name'])
+                ->get($this->fixture['path'] ?? null);
+        }
     }
 
     protected function runCreateTests(): void
     {
-        $this->createFromArray();
         $this->createFromJson();
-    }
-
-    protected function createFromArray(): void
-    {
-        $array = json_decode($this->json, true);
-        $entity = $this->entityClass::fromArray($array);
-        $this->assertHasFields($entity);
-        $this->assertFieldValidity($entity);
     }
 
     protected function createFromJson(): void
