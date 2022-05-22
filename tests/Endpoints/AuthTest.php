@@ -17,7 +17,7 @@ class AuthTest extends TestCase
      */
     public function testAccessToken()
     {
-        $jsonAuth = JsonFactory::load('Endpoints/auth')->get();
+        $jsonAuth = JsonFactory::load('auth')->get();
 
         $mock = new MockHandler([
             new Response(200, ['content-type' => 'application/json; charset=utf-8'], $jsonAuth),

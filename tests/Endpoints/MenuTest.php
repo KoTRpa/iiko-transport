@@ -19,8 +19,8 @@ class MenuTest extends TestCase
      */
     public function testNomenclature()
     {
-        $jsonAuth = JsonFactory::load('Endpoints/auth')->get();
-        $jsonNomenclature = JsonFactory::load('Endpoints/nomenclature')->get();
+        $jsonAuth = JsonFactory::load('auth')->get();
+        $jsonNomenclature = JsonFactory::load('Menu/nomenclatureResponse')->get();
 
         $mock = new MockHandler([
             new Response(200, ['content-type' => 'application/json; charset=utf-8'], $jsonAuth),
