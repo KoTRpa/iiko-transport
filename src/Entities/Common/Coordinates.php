@@ -1,6 +1,8 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\Common;
+
+use KMA\IikoTransport\Entities\Entity;
 
 class Coordinates extends Entity
 {

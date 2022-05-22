@@ -19,17 +19,18 @@ trait Delivery
      * @return \KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      */
     public function createDelivery(CreateDeliveryRequest $request): CreateDeliveryResponse
     {
-        $endpoint = 'deliveries/create';
-
-        $response = $this->post($endpoint, $request, [
-            'Authorization' => 'Bearer ' . $this->accessToken()
-        ]);
+        $response = $this->post(
+            'deliveries/create',
+            $request,
+            ['Authorization' => 'Bearer ' . $this->accessToken()]
+        );
 
         return CreateDeliveryResponse::fromJson($response->getBody());
     }

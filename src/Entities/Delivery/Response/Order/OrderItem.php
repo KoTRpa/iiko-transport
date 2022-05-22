@@ -86,7 +86,7 @@ class OrderItem extends Entity
     public ?Size $size = null;
 
     /**
-     * @var null|\KMA\IikoTransport\Entities\Delivery\Response\Order\ComboInformation Size
+     * @var null|\KMA\IikoTransport\Entities\Delivery\Response\Order\ComboInformation Combo information
      */
     public ?ComboInformation $comboInformation = null;
 

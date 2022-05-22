@@ -2,13 +2,13 @@
 
 namespace KMA\IikoTransport\Entities\Delivery\Response\Order;
 
+use KMA\IikoTransport\Entities\Common\Coordinates;
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\Coordinates;
 
 class DeliveryPoint extends Entity
 {
     /**
-     * @var \KMA\IikoTransport\Entities\Coordinates|null Delivery address coordinates
+     * @var \KMA\IikoTransport\Entities\Common\Coordinates|null Delivery address coordinates
      */
     public ?Coordinates $coordinates = null;
 

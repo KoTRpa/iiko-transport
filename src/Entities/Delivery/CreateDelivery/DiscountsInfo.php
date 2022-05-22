@@ -3,8 +3,8 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Entities\Card;
+use KMA\IikoTransport\Entities\Entity;
 
 class DiscountsInfo extends Entity
 {

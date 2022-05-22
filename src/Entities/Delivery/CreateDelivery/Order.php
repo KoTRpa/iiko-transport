@@ -3,10 +3,9 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\Entity;
-
-use KMA\IikoTransport\Entities\DeliveryPoint;
 use KMA\IikoTransport\Entities\Customer;
+use KMA\IikoTransport\Entities\DeliveryPoint;
+use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Entities\Guests;
 use KMA\IikoTransport\Entities\IikoCard5Info;
 

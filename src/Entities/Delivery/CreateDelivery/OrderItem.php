@@ -2,9 +2,9 @@
 
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\ComboInformation;
 use Illuminate\Support\Collection;
+use KMA\IikoTransport\Entities\ComboInformation;
+use KMA\IikoTransport\Entities\Entity;
 
 /**
  * TODO: make compound type

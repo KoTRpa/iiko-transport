@@ -8,9 +8,8 @@ use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
 use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
 use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
-use KMA\IikoTransport\Entities\Menu\NomenclatureRequest;
-use KMA\IikoTransport\Entities\Menu\NomenclatureResponse;
 use KMA\IikoTransport\IikoTransport;
+use KMA\IikoTransport\Tests\JsonFactory;
 use PHPUnit\Framework\TestCase;
 
 class DeliveryTest extends TestCase
@@ -20,8 +19,8 @@ class DeliveryTest extends TestCase
      */
     public function testCreateDelivery()
     {
-        $jsonAuth = file_get_contents(dirname(__DIR__) . '/Fixtures/Endpoints/auth.json');
-        $jsonCreateDelivery = file_get_contents(dirname(__DIR__) . '/Fixtures/Endpoints/createDelivery.json');
+        $jsonAuth = JsonFactory::all('auth');
+        $jsonCreateDelivery = JsonFactory::all('Delivery/createDeliveryResponse');
 
         $mock = new MockHandler([
             new Response(200, ['content-type' => 'application/json; charset=utf-8'], $jsonAuth),

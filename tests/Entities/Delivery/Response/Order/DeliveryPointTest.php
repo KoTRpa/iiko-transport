@@ -23,7 +23,7 @@ class DeliveryPointTest extends EntityTestCase
     protected function assertFieldValidity($entity): void
     {
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Coordinates::class,
+            \KMA\IikoTransport\Entities\Common\Coordinates::class,
             $entity->coordinates
         );
 
