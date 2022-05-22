@@ -9,6 +9,7 @@ use GuzzleHttp\Psr7\Response;
 use KMA\IikoTransport\Entities\Menu\NomenclatureRequest;
 use KMA\IikoTransport\Entities\Menu\NomenclatureResponse;
 use KMA\IikoTransport\IikoTransport;
+use KMA\IikoTransport\Tests\JsonFactory;
 use PHPUnit\Framework\TestCase;
 
 class MenuTest extends TestCase
@@ -18,8 +19,8 @@ class MenuTest extends TestCase
      */
     public function testNomenclature()
     {
-        $jsonAuth = file_get_contents(dirname(__DIR__) . '/Fixtures/Endpoints/auth.json');
-        $jsonNomenclature = file_get_contents(dirname(__DIR__) . '/Fixtures/Endpoints/nomenclature.json');
+        $jsonAuth = JsonFactory::load('Endpoints/auth')->get();
+        $jsonNomenclature = JsonFactory::load('Endpoints/nomenclature')->get();
 
         $mock = new MockHandler([
             new Response(200, ['content-type' => 'application/json; charset=utf-8'], $jsonAuth),

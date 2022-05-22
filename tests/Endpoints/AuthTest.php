@@ -7,6 +7,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
 use KMA\IikoTransport\IikoTransport;
+use KMA\IikoTransport\Tests\JsonFactory;
 use PHPUnit\Framework\TestCase;
 
 class AuthTest extends TestCase
@@ -16,7 +17,7 @@ class AuthTest extends TestCase
      */
     public function testAccessToken()
     {
-        $jsonAuth = file_get_contents(dirname(__DIR__) . '/Fixtures/Endpoints/auth.json');
+        $jsonAuth = JsonFactory::load('Endpoints/auth')->get();
 
         $mock = new MockHandler([
             new Response(200, ['content-type' => 'application/json; charset=utf-8'], $jsonAuth),
