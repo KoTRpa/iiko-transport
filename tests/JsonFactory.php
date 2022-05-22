@@ -13,11 +13,32 @@ final class JsonFactory
         $this->json = file_get_contents($path);
     }
 
-    public static function load(string $name): JsonFactory
+    public static function load(string $name): self
     {
         return new self($name);
     }
 
+    /**
+     * @throws \Exception
+     */
+    public static function all(string $name): string
+    {
+        $self = new self($name);
+        return $self->get();
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public static function path(string $name, string $path): string
+    {
+        $self = new self($name);
+        return $self->get($path);
+    }
+
+    /**
+     * @throws \Exception
+     */
     public function get(string $path = null): string
     {
         if (null === $path) {
