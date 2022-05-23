@@ -2,11 +2,11 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Organization;
-use KMA\IikoTransport\Entities\Requests\OrganizationsRequest;
+use KMA\IikoTransport\Entities\Organizations\OrganizationsRequest;
+use KMA\IikoTransport\Entities\Organizations\OrganizationsResponse;
 
 /**
- * Nomenclature APIs
+ * Organizations APIs
  *
  * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
@@ -15,22 +15,25 @@ use KMA\IikoTransport\Entities\Requests\OrganizationsRequest;
 trait Organizations
 {
     /**
-     * @param \KMA\IikoTransport\Entities\Requests\OrganizationsRequest $request
-     * @return \KMA\IikoTransport\Entities\Organization[]
-     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @param \KMA\IikoTransport\Entities\Organizations\OrganizationsRequest $request
+     *
+     * @return \KMA\IikoTransport\Entities\Organizations\OrganizationsResponse
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
-     * @throws \JsonMapper_Exception
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      */
-    public function organizations(OrganizationsRequest $request): array
+    public function organizations(OrganizationsRequest $request): OrganizationsResponse
     {
-        $endpoint = 'organizations';
+        $response = $this->post(
+            'organizations',
+            $request,
+            [ 'Authorization' => 'Bearer ' . $this->accessToken() ]
+        );
 
-        $response = $this->post($endpoint, (array)$request, [
-            'Authorization' => 'Bearer ' . $this->accessToken()
-        ]);
-
-        $data = $response->getDecodedBody();
-
-        return $this->mapper->mapArray($data['organizations'], [], Organization::class);
+        return OrganizationsResponse::fromJson($response->getBody());
     }
 }
