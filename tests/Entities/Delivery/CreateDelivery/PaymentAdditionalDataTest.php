@@ -1,13 +1,20 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\PaymentAdditionalData;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\PaymentAdditionalData
+ */
 class PaymentAdditionalDataTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/PaymentAdditionalData.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\PaymentAdditionalData::class;
+    protected array $fixture = [
+        'name' => 'Delivery/CreateDeliveryRequest',
+        'path' => 'order.payments.paymentAdditionalData'
+    ];
+    protected string $entityClass = PaymentAdditionalData::class;
     protected array $fields = [
         'credential',
         'searchScope',

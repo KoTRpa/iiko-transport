@@ -3,11 +3,18 @@
 namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order
+ */
 class OrderTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/Order.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::class;
+    protected array $fixture = [
+        'name' => 'Delivery/CreateDeliveryRequest',
+        'path' => 'order'
+    ];
+    protected string $entityClass = Order::class;
     protected array $fields = [
         'id',
         'completeBefore',
@@ -29,11 +36,6 @@ class OrderTest extends EntityTestCase
         'iikoCard5Info',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::__construct
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::fromArray
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Order::fromJson
-     */
     public function testEntityCreate()
     {
         $this->runCreateTests();
@@ -53,7 +55,7 @@ class OrderTest extends EntityTestCase
         $this->assertContains($entity->orderServiceType, ['DeliveryByCourier', 'DeliveryByClient']);
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\DeliveryPoint::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DeliveryPoint::class,
             $entity->deliveryPoint
         );
 
@@ -61,12 +63,12 @@ class OrderTest extends EntityTestCase
 
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Customer::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Customer::class,
             $entity->customer
         );
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Guests::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Guests::class,
             $entity->guests
         );
 
@@ -130,7 +132,7 @@ class OrderTest extends EntityTestCase
         );
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\IikoCard5Info::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\IikoCard5Info::class,
             $entity->iikoCard5Info
         );
     }

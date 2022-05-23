@@ -3,11 +3,18 @@
 namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment
+ */
 class TipsPaymentTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/TipsPayment.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment::class;
+    protected array $fixture = [
+        'name' => 'Delivery/CreateDeliveryRequest',
+        'path' => 'order.tips'
+    ];
+    protected string $entityClass = TipsPayment::class;
     protected array $fields = [
         'paymentTypeKind',
         'tipsTypeId',
@@ -18,11 +25,6 @@ class TipsPaymentTest extends EntityTestCase
         'isFiscalizedExternally',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment::__construct
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment::fromArray
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\TipsPayment::fromJson
-     */
     public function testEntityCreate()
     {
         $this->runCreateTests();
@@ -47,7 +49,7 @@ class TipsPaymentTest extends EntityTestCase
         $this->assertIsBool($entity->isProcessedExternally);
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\PaymentAdditionalData::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\PaymentAdditionalData::class,
             $entity->paymentAdditionalData
         );
 

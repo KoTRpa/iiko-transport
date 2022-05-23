@@ -1,12 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
+
+use KMA\IikoTransport\Entities\Entity;
 
 class Address extends Entity
 {
     /**
      * @required
-     * @var \KMA\IikoTransport\Entities\Street Street
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Street Street
      */
     public Street $street;
 

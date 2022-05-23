@@ -3,11 +3,7 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\Customer;
-use KMA\IikoTransport\Entities\DeliveryPoint;
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\Guests;
-use KMA\IikoTransport\Entities\IikoCard5Info;
 
 class Order extends Entity
 {
@@ -49,7 +45,7 @@ class Order extends Entity
     public ?string $orderServiceType = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\DeliveryPoint|null Delivery point details.
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DeliveryPoint|null Delivery point details.
      * Not required in case of customer pickup. Otherwise, required.
      */
     public ?DeliveryPoint $deliveryPoint = null;
@@ -61,12 +57,12 @@ class Order extends Entity
 
     /**
      * @required
-     * @var \KMA\IikoTransport\Entities\Customer Customer
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Customer Customer
      */
     public Customer $customer;
 
     /**
-     * @var \KMA\IikoTransport\Entities\Guests|null Guests information (count)
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Guests|null Guests information (count)
      */
     public ?Guests $guests = null;
 
@@ -121,7 +117,7 @@ class Order extends Entity
     public ?DiscountsInfo $discountsInfo = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\IikoCard5Info|null Information about iikoCard5
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\IikoCard5Info|null Information about iikoCard5
      */
     public ?IikoCard5Info $iikoCard5Info = null;
 

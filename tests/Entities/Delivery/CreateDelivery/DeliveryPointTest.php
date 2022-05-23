@@ -1,13 +1,20 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\DeliveryPoint;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DeliveryPoint
+ */
 class DeliveryPointTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/DeliveryPoint.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\DeliveryPoint::class;
+    protected array $fixture = [
+        'name' => 'Delivery/CreateDeliveryRequest',
+        'path' => 'order.deliveryPoint'
+    ];
+    protected string $entityClass = DeliveryPoint::class;
     protected array $fields = [
         'coordinates',
         'address',
@@ -23,12 +30,12 @@ class DeliveryPointTest extends EntityTestCase
     protected function assertFieldValidity($entity): void
     {
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Coordinates::class,
+            \KMA\IikoTransport\Entities\Common\Coordinates::class,
             $entity->coordinates
         );
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Address::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Address::class,
             $entity->address
         );
 

@@ -3,22 +3,23 @@
 namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo
+ */
 class DiscountsInfoTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/DiscountsInfo.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo::class;
+    protected array $fixture = [
+        'name' => 'Delivery/CreateDeliveryRequest',
+        'path' => 'order.discountsInfo'
+    ];
+    protected string $entityClass = DiscountsInfo::class;
     protected array $fields = [
         'card',
         'discounts',
     ];
 
-
-    /**
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo::__construct
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo::fromArray
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\DiscountsInfo::fromJson
-     */
     public function testEntityCreate()
     {
         $this->runCreateTests();
@@ -27,7 +28,7 @@ class DiscountsInfoTest extends EntityTestCase
     protected function assertFieldValidity(mixed $entity): void
     {
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\Card::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Card::class,
             $entity->card
         );
 

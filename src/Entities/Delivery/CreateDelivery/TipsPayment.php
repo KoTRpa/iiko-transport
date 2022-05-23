@@ -3,7 +3,6 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\PaymentAdditionalData;
 
 class TipsPayment extends Entity
 {
@@ -41,7 +40,7 @@ class TipsPayment extends Entity
     public bool $isProcessedExternally = false;
 
     /**
-     * @var \KMA\IikoTransport\Entities\PaymentAdditionalData|null Additional payment parameters
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\PaymentAdditionalData|null Additional payment parameters
      */
     public ?PaymentAdditionalData $paymentAdditionalData = null;
 

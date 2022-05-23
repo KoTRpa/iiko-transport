@@ -1,6 +1,8 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
+
+use KMA\IikoTransport\Entities\Entity;
 
 class Customer extends Entity
 {

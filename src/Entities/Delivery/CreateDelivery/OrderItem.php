@@ -3,7 +3,6 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\ComboInformation;
 use KMA\IikoTransport\Entities\Entity;
 
 /**
@@ -59,7 +58,7 @@ class OrderItem extends Entity
     public ?string $productSizeId = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\ComboInformation|null Combo details if combo includes order item
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\ComboInformation|null Combo details if combo includes order item
      */
     public ?ComboInformation $comboInformation = null;
 

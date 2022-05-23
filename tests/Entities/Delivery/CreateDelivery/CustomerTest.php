@@ -1,13 +1,20 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities;
+namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\Customer;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Customer
+ */
 class CustomerTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/Customer.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Customer::class;
+    protected array $fixture = [
+        'name' => 'Delivery/CreateDeliveryRequest',
+        'path' => 'order.customer'
+    ];
+    protected string $entityClass = Customer::class;
     protected array $fields = [
         'id',
         'name',

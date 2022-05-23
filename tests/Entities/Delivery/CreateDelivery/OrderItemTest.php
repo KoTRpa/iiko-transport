@@ -3,11 +3,18 @@
 namespace KMA\IikoTransport\Tests\Entities\Delivery\CreateDelivery;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem
+ */
 class OrderItemTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/OrderItem.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem::class;
+    protected array $fixture = [
+        'name' => 'Delivery/CreateDeliveryRequest',
+        'path' => 'order.items'
+    ];
+    protected string $entityClass = OrderItem::class;
     protected array $fields = [
         'productId',
         'modifiers',
@@ -20,11 +27,6 @@ class OrderItemTest extends EntityTestCase
         'comment',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem::__construct
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem::fromArray
-     * @covers \KMA\IikoTransport\Entities\Delivery\CreateDelivery\OrderItem::fromJson
-     */
     public function testEntityCreate()
     {
         $this->runCreateTests();
@@ -57,7 +59,7 @@ class OrderItemTest extends EntityTestCase
         $this->assertIsUuid($entity->productSizeId);
 
         $this->assertInstanceOf(
-            \KMA\IikoTransport\Entities\ComboInformation::class,
+            \KMA\IikoTransport\Entities\Delivery\CreateDelivery\ComboInformation::class,
             $entity->comboInformation
         );
 

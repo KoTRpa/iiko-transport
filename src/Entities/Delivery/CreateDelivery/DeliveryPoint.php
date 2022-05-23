@@ -1,17 +1,20 @@
 <?php
 
-namespace KMA\IikoTransport\Entities;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
+
+use KMA\IikoTransport\Entities\Entity;
+use KMA\IikoTransport\Entities\Common\Coordinates;
 
 class DeliveryPoint extends Entity
 {
     /**
-     * @var \KMA\IikoTransport\Entities\Coordinates|null Delivery address coordinates
+     * @var \KMA\IikoTransport\Entities\Common\Coordinates|null Delivery address coordinates
      * Allowed from version 7.7.3
      */
     public ?Coordinates $coordinates = null;
 
     /**
-     * @var \KMA\IikoTransport\Entities\Address|null Order delivery address
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Address|null Order delivery address
      */
     public ?Address $address = null;
 

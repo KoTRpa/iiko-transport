@@ -3,13 +3,12 @@
 namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\Card;
 use KMA\IikoTransport\Entities\Entity;
 
 class DiscountsInfo extends Entity
 {
     /**
-     * @var \KMA\IikoTransport\Entities\Card|null Track of discount card to be applied to order
+     * @var \KMA\IikoTransport\Entities\Delivery\CreateDelivery\Card|null Track of discount card to be applied to order
      */
     public ?Card $card = null;
 
