@@ -9,8 +9,7 @@ class IikoTransport
 {
     use Http\Http;
 
-    use Endpoints\Auth,
-        Endpoints\Dictionaries,
+    use Endpoints\Dictionaries,
         Endpoints\Menu,
         Endpoints\Delivery,
         Endpoints\Organizations,

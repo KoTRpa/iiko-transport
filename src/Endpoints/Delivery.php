@@ -10,7 +10,6 @@ use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
  *
  * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
- * @mixin \KMA\IikoTransport\Endpoints\Auth
  */
 trait Delivery
 {
@@ -28,8 +27,7 @@ trait Delivery
     {
         $response = $this->post(
             'deliveries/create',
-            $request,
-            ['Authorization' => 'Bearer ' . $this->accessToken()]
+            $request
         );
 
         return CreateDeliveryResponse::fromJson($response->getBody());

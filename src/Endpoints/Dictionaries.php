@@ -11,7 +11,6 @@ use KMA\IikoTransport\Entities\Dictionaries\PaymentTypes\PaymentTypesResponse;
  *
  * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
- * @mixin \KMA\IikoTransport\Endpoints\Auth
  */
 trait Dictionaries
 {
@@ -33,8 +32,7 @@ trait Dictionaries
     {
         $response = $this->post(
             'payment_types',
-            $request,
-            [ 'Authorization' => 'Bearer ' . $this->accessToken() ]
+            $request
         );
 
         return PaymentTypesResponse::fromJson($response->getBody());

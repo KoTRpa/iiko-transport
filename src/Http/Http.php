@@ -6,7 +6,9 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use KMA\IikoTransport\Contracts\IRequestBody;
+use KMA\IikoTransport\Exceptions\MissingTokenException;
 use KMA\IikoTransport\Exceptions\ResponseException;
+use KMA\IikoTransport\Helpers\Json;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -18,6 +20,11 @@ trait Http
      * @var \GuzzleHttp\Client|null http requests handler
      */
     protected ?Client $client = null;
+
+    /**
+     * @var bool auth token required for request
+     */
+    protected bool $isAuthorizedRequest = true;
 
     /**
      * @var array default GuzzleHttp\Client params
@@ -43,14 +50,17 @@ trait Http
      * Sends a GET request to API and returns the result.
      *
      * @param string $endpoint
-     * @param array  $params
-     * @param array  $headers
+     * @param array $params
+     * @param array $headers
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Psr\Http\Client\ClientExceptionInterface
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      */
     protected function get(string $endpoint, array $params = [], array $headers = []): ResponseInterface
     {
@@ -67,8 +77,11 @@ trait Http
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      */
     protected function post(string $endpoint, IRequestBody $body = null, array $params = [], array $headers = []): ResponseInterface
@@ -87,15 +100,23 @@ trait Http
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      */
     protected function send(string $method, string $endpoint, string $body = null, array $params = [], array $headers = []): ResponseInterface
     {
+        $authHeader = $this->isAuthorizedRequest
+            ? [ 'Authorization' => 'Bearer ' . $this->accessToken() ]
+            : [];
+
         $request = new Request(
             $method,
             $endpoint,
-            array_merge($this->defaultHeaders, $headers),
+            array_merge($this->defaultHeaders, $headers, $authHeader),
             $body
         );
 
@@ -120,5 +141,46 @@ trait Http
             $this->client = new Client($config);
         }
         return $this->client;
+    }
+
+    /**
+     * @return string token
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     */
+    protected function accessToken(): string
+    {
+        if (!($login = $this->getConfig('login'))) {
+            throw new \InvalidArgumentException('Missing login config. Check the .env for IIKO_LOGIN');
+        }
+
+        $request = new Request(
+            'POST',
+            'access_token',
+            $this->defaultHeaders,
+            json_encode(['apiLogin' => $login])
+        );
+
+        $response = $this->getClient()->send($request, $this->defaultParams);
+
+        $body = Json::json_decode($response->getBody(), true);
+
+        if (empty($body['token'])) {
+            throw new MissingTokenException('Auth request no token return');
+        }
+
+        return $body['token'];
+    }
+
+    /**
+     * disable auth due request
+     * @return \KMA\IikoTransport\Http\Http|\KMA\IikoTransport\IikoTransport
+     */
+    protected function unauthorized(): self
+    {
+        $this->isAuthorizedRequest = false;
+        return $this;
     }
 }

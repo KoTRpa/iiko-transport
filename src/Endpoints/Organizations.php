@@ -10,7 +10,6 @@ use KMA\IikoTransport\Entities\Organizations\OrganizationsResponse;
  *
  * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
- * @mixin \KMA\IikoTransport\Endpoints\Auth
  */
 trait Organizations
 {
@@ -30,8 +29,7 @@ trait Organizations
     {
         $response = $this->post(
             'organizations',
-            $request,
-            [ 'Authorization' => 'Bearer ' . $this->accessToken() ]
+            $request
         );
 
         return OrganizationsResponse::fromJson($response->getBody());

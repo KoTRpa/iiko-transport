@@ -10,7 +10,6 @@ use KMA\IikoTransport\Entities\Menu\NomenclatureResponse;
  *
  * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
- * @mixin \KMA\IikoTransport\Endpoints\Auth
  */
 trait Menu
 {
@@ -30,8 +29,7 @@ trait Menu
     {
         $res = $this->post(
             'nomenclature',
-            $req,
-            ['Authorization' => 'Bearer ' . $this->accessToken()]
+            $req
         );
 
         return NomenclatureResponse::fromJson($res->getBody());

@@ -10,7 +10,6 @@ use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse;
  *
  * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
- * @mixin \KMA\IikoTransport\Endpoints\Auth
  */
 trait TerminalGroups
 {
@@ -30,8 +29,7 @@ trait TerminalGroups
     {
         $response = $this->post(
             'terminal_groups',
-            $request,
-            [ 'Authorization' => 'Bearer ' . $this->accessToken() ]
+            $request
         );
 
         return TerminalGroupsResponse::fromJson($response->getBody());
