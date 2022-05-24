@@ -3,7 +3,6 @@
 namespace KMA\IikoTransport;
 
 use JetBrains\PhpStorm\ArrayShape;
-use JsonMapper;
 use KMA\IikoTransport\Endpoints;
 
 class IikoTransport
@@ -17,19 +16,13 @@ class IikoTransport
         Endpoints\Organizations,
         Endpoints\TerminalGroups;
 
-    protected JsonMapper $mapper;
-
+    /**
+     * @param array $config
+     */
     public function __construct(
-        #[ArrayShape([
-            'url' => 'string',
-            'login' => 'string',
-            'http' => 'array'
-        ])]
+        #[ArrayShape([ 'url' => 'string', 'login' => 'string', 'http' => 'array' ])]
         protected array $config
-    ) {
-        $this->mapper = new JsonMapper();
-        $this->mapper->bEnforceMapType = false;
-    }
+    ) {}
 
     /**
      * Get the specified configuration value.

@@ -1,7 +1,7 @@
 {
     "name": "kma/iiko-transport",
     "type": "library",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Iiko Transport API",
     "keywords": [
         "Iiko", "Iiko Transport"
@@ -20,7 +20,6 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.0",
         "illuminate/support": "^8.67 || ^9.0",
-        "netresearch/jsonmapper": "^4.0",
         "psr/log": "^1.0 || ^2.0 || ^3.0",
         "vlucas/phpdotenv": "^5.4"
     },
