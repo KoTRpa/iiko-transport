@@ -39,7 +39,7 @@ class OrganizationsRequest extends Entity implements IRequestBody
     )
     {
         if (null !== $data) {
-            $this->organizationIds = $data['organizationIds'];
+            $this->organizationIds = $data['organizationIds'] ?? null;
             $this->returnAdditionalInfo = $data['returnAdditionalInfo'];
             $this->includeDisabled = $data['includeDisabled'];
         }
