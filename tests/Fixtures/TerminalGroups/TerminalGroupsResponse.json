@@ -1,0 +1,16 @@
+{
+    "correlationId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+    "terminalGroups": [
+        {
+            "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+            "items": [
+                {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+                    "name": "string",
+                    "address": "string"
+                }
+            ]
+        }
+    ]
+}

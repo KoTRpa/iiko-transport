@@ -2,8 +2,8 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Requests\TerminalGroupsRequest;
-use KMA\IikoTransport\Entities\TerminalGroup;
+use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsRequest;
+use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse;
 
 /**
  * Nomenclature APIs
@@ -15,22 +15,25 @@ use KMA\IikoTransport\Entities\TerminalGroup;
 trait TerminalGroups
 {
     /**
-     * @param \KMA\IikoTransport\Entities\Requests\TerminalGroupsRequest $request
-     * @return \KMA\IikoTransport\Entities\TerminalGroup[]
-     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @param \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsRequest $request
+     *
+     * @return \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
      * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
-     * @throws \JsonMapper_Exception
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      */
-    public function terminalGroups(TerminalGroupsRequest $request): array
+    public function terminalGroups(TerminalGroupsRequest $request): TerminalGroupsResponse
     {
-        $endpoint = 'terminal_groups';
+        $response = $this->post(
+            'terminal_groups',
+            $request,
+            [ 'Authorization' => 'Bearer ' . $this->accessToken() ]
+        );
 
-        $response = $this->post($endpoint, (array)$request, [
-            'Authorization' => 'Bearer ' . $this->accessToken()
-        ]);
-
-        $data = $response->getDecodedBody();
-
-        return $this->mapper->mapArray($data['terminalGroups'], [], TerminalGroup::class);
+        return TerminalGroupsResponse::fromJson($response->getBody());
     }
 }
