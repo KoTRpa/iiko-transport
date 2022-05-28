@@ -4,7 +4,7 @@ namespace KMA\IikoTransport\Entities\PaymentTypes;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup;
+use KMA\IikoTransport\Entities\Terminals\TerminalGroup;
 
 class PaymentType extends Entity
 {
@@ -69,7 +69,7 @@ class PaymentType extends Entity
     public ?string $paymentTypeKind = null;
 
     /**
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Terminals\TerminalGroup>
      * Terminal groups where this payment type is available
      * @required
      */

@@ -1,14 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\TerminalGroups;
+namespace KMA\IikoTransport\Tests\Endpoints\General\TerminalGroups;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsByOrganization;
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse;
+use KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsResponse;
+use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap;
 
 /**
- * @covers \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse
+ * @covers \KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsResponse
  */
 class TerminalGroupsResponseTest extends EntityTestCase
 {
@@ -31,7 +31,7 @@ class TerminalGroupsResponseTest extends EntityTestCase
         $this->assertIsUuid($entity->correlationId);
         $this->assertInstanceOf(Collection::class, $entity->terminalGroups);
         $entity->terminalGroups->each(function ($item): void {
-            $this->assertInstanceOf(TerminalGroupsByOrganization::class, $item);
+            $this->assertInstanceOf(TerminalGroupsWrap::class, $item);
         });
     }
 }

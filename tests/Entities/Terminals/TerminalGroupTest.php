@@ -1,12 +1,12 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Terminals;
+namespace KMA\IikoTransport\Tests\Entities\Terminals;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup;
+use KMA\IikoTransport\Entities\Terminals\TerminalGroup;
 
 /**
- * @covers \KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup
+ * @covers \KMA\IikoTransport\Entities\Terminals\TerminalGroup
  */
 class TerminalGroupTest extends EntityTestCase
 {

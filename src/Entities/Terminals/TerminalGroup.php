@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Common\Terminals;
+namespace KMA\IikoTransport\Entities\Terminals;
 
 use KMA\IikoTransport\Entities\Entity;
 

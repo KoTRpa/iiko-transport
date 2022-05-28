@@ -4,9 +4,9 @@ namespace KMA\IikoTransport\Entities\TerminalGroups;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup;
+use KMA\IikoTransport\Entities\Terminals\TerminalGroup;
 
-class TerminalGroupsByOrganization extends Entity
+class TerminalGroupsWrap extends Entity
 {
     /**
      * @required
@@ -18,7 +18,7 @@ class TerminalGroupsByOrganization extends Entity
     /**
      * Items for organization
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Terminals\TerminalGroup>
      */
     public Collection $items;
 

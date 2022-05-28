@@ -3,9 +3,9 @@
 namespace KMA\IikoTransport\Tests\Entities\PaymentTypes;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Tests\EntityTestCase;
 use KMA\IikoTransport\Entities\PaymentTypes\PaymentType;
-use KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup;
+use KMA\IikoTransport\Entities\Terminals\TerminalGroup;
+use KMA\IikoTransport\Tests\EntityTestCase;
 
 /**
  * @covers \KMA\IikoTransport\Entities\PaymentTypes\PaymentType

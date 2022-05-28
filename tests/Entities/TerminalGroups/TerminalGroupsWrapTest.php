@@ -3,20 +3,20 @@
 namespace KMA\IikoTransport\Tests\Entities\TerminalGroups;
 
 use Illuminate\Support\Collection;
+use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap;
+use KMA\IikoTransport\Entities\Terminals\TerminalGroup;
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsByOrganization;
-use KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup;
 
 /**
- * @covers \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsByOrganization
+ * @covers \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap
  */
-class TerminalGroupsByOrganizationTest extends EntityTestCase
+class TerminalGroupsWrapTest extends EntityTestCase
 {
     protected array $fixture = [
         'name' => 'TerminalGroups/TerminalGroupsResponse',
         'path' => 'terminalGroups',
     ];
-    protected string $entityClass = TerminalGroupsByOrganization::class;
+    protected string $entityClass = TerminalGroupsWrap::class;
     protected array $fields = [
         'organizationId',
         'items',

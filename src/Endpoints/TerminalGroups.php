@@ -2,8 +2,8 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsRequest;
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse;
+use KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsRequest;
+use KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsResponse;
 
 /**
  * Nomenclature APIs
@@ -14,9 +14,9 @@ use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse;
 trait TerminalGroups
 {
     /**
-     * @param \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsRequest $request
+     * @param \KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsRequest $request
      *
-     * @return \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsResponse
+     * @return \KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException

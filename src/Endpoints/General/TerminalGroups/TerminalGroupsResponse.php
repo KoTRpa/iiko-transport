@@ -1,11 +1,11 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\TerminalGroups;
+namespace KMA\IikoTransport\Endpoints\General\TerminalGroups;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsByOrganization;
+use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap;
 
 class TerminalGroupsResponse extends Entity
 {
@@ -14,7 +14,7 @@ class TerminalGroupsResponse extends Entity
     /**
      * List of terminal groups broken down by organizations
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsByOrganization>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap>
      */
     public Collection $terminalGroups;
 
@@ -24,7 +24,7 @@ class TerminalGroupsResponse extends Entity
             $this->correlationId = $data['correlationId'];
             $this->terminalGroups =
                 collect($data['terminalGroups'])
-                    ->map(fn (array $item): TerminalGroupsByOrganization => TerminalGroupsByOrganization::fromArray($item));
+                    ->map(fn (array $item): TerminalGroupsWrap => TerminalGroupsWrap::fromArray($item));
         }
     }
 }
