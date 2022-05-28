@@ -6,6 +6,8 @@ use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
 use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
+use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
+use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesResponse;
 
 /**
  * Delivery APIs
@@ -57,5 +59,28 @@ trait Delivery
         );
 
         return RetrieveByIdResponse::fromJson($response->getBody());
+    }
+
+
+    /**
+     * @param CitiesRequest $request
+     *
+     * @return CitiesResponse
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     */
+    public function cities(CitiesRequest $request): CitiesResponse
+    {
+        $response = $this->post(
+            'cities',
+            $request
+        );
+
+        return CitiesResponse::fromJson($response->getBody());
     }
 }

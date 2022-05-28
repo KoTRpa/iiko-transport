@@ -2,19 +2,21 @@
 
 namespace KMA\IikoTransport\Tests\Endpoints;
 
+use KMA\IikoTransport\Tests\EndpointTestCase;
+use KMA\IikoTransport\Tests\JsonFactory;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
+use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
+use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesResponse;
 use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
 use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
 use KMA\IikoTransport\IikoTransport;
-use KMA\IikoTransport\Tests\JsonFactory;
-use PHPUnit\Framework\TestCase;
 
-class DeliveryTest extends TestCase
+class DeliveryTest extends EndpointTestCase
 {
     /**
      * @covers \KMA\IikoTransport\IikoTransport::createDelivery
@@ -88,5 +90,19 @@ class DeliveryTest extends TestCase
 
         $this->assertInstanceOf(RetrieveByIdResponse::class, $response);
         $this->assertEquals(RetrieveByIdResponse::fromJson($json), $response);
+    }
+
+    /**
+     * @covers \KMA\IikoTransport\IikoTransport::cities
+     */
+    public function testCities()
+    {
+        $this->runTests(
+            'Delivery/CitiesResponse',
+            'cities',
+            CitiesRequest::class,
+            CitiesResponse::class,
+            '/api/1/cities'
+        );
     }
 }
