@@ -1,17 +1,17 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Address;
+namespace KMA\IikoTransport\Tests\Entities\Address;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\Common\Address\City;
+use KMA\IikoTransport\Entities\Address\City;
 
 /**
- * @covers \KMA\IikoTransport\Entities\Common\Address\City
+ * @covers \KMA\IikoTransport\Entities\Address\City
  */
 class CityTest extends EntityTestCase
 {
     protected array $fixture = [
-        'name' => 'Common/Address/City'
+        'name' => 'Address/City'
     ];
     protected string $entityClass = City::class;
     protected array $fields = [

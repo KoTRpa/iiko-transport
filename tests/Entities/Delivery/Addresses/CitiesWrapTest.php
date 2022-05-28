@@ -3,8 +3,8 @@
 namespace KMA\IikoTransport\Tests\Entities\Delivery\Addresses;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\Common\Address\City;
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Address\City;
 use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesWrap;
 
 /**

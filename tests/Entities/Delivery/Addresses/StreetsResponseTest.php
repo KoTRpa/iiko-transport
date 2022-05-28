@@ -3,8 +3,8 @@
 namespace KMA\IikoTransport\Tests\Entities\Delivery\Addresses;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\Common\Address\Street;
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Address\Street;
 use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsResponse;
 
 /**

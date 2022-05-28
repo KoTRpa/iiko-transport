@@ -1,14 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Common\Address;
+namespace KMA\IikoTransport\Entities\Address;
 
 use KMA\IikoTransport\Entities\Entity;
 
-class City extends Entity
+class Street extends Entity
 {
     /**
      * @required
-     * @var string <uuid> City ID in RMS
+     * @var string <uuid> Street ID in RMS
      */
     public string $id;
 
@@ -24,20 +24,15 @@ class City extends Entity
     public ?int $externalRevision = null;
 
     /**
-     * @required
-     * @var bool Is-Deleted attribute
-     */
-    public bool $isDeleted;
-
-    /**
      * @var string|null ID in classifier, e.g., address database
      */
     public ?string $classifierId = null;
 
     /**
-     * @var string|null City additional information
+     * @required
+     * @var bool Is-Deleted attribute
      */
-    public ?string $additionalInfo = null;
+    public bool $isDeleted;
 
 
     public function __construct(?array $data = null)
@@ -46,9 +41,8 @@ class City extends Entity
             $this->id = $data['id'];
             $this->name = $data['name'];
             $this->externalRevision = $data['externalRevision'] ?? null;
-            $this->isDeleted = $data['isDeleted'];
             $this->classifierId = $data['classifierId'] ?? null;
-            $this->additionalInfo = $data['additionalInfo'] ?? null;
+            $this->isDeleted = $data['isDeleted'];
         }
     }
 }

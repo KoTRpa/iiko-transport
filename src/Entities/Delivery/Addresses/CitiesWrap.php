@@ -3,8 +3,8 @@
 namespace KMA\IikoTransport\Entities\Delivery\Addresses;
 
 use Illuminate\Support\Collection;
+use KMA\IikoTransport\Entities\Address\City;
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\Common\Address\City;
 
 class CitiesWrap extends Entity
 {
@@ -18,7 +18,7 @@ class CitiesWrap extends Entity
     /**
      * Items for organization
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Address\City>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Address\City>
      */
     public Collection $items;
 

@@ -4,7 +4,7 @@ namespace KMA\IikoTransport\Entities\Delivery\Addresses;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
-use KMA\IikoTransport\Entities\Common\Address\Street;
+use KMA\IikoTransport\Entities\Address\Street;
 use KMA\IikoTransport\Entities\Entity;
 
 class StreetsResponse extends Entity
@@ -14,7 +14,7 @@ class StreetsResponse extends Entity
     /**
      * List of cities
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Address\Street>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Address\Street>
      */
     public Collection $streets;
 

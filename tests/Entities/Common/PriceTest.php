@@ -3,11 +3,17 @@
 namespace KMA\IikoTransport\Tests\Entities\Common;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Common\Price;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Common\Price
+ */
 class PriceTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/Price.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Price::class;
+    protected array $fixture = [
+        'name' => 'Common/Price'
+    ];
+    protected string $entityClass = Price::class;
     protected array $fields = [
         'currentPrice',
         'isIncludedInMenu',
@@ -15,11 +21,7 @@ class PriceTest extends EntityTestCase
         'nextIncludedInMenu',
         'nextDatePrice',
     ];
-    /**
-     * @covers \KMA\IikoTransport\Entities\Common\Price::__construct
-     * @covers \KMA\IikoTransport\Entities\Common\Price::fromArray
-     * @covers \KMA\IikoTransport\Entities\Common\Price::fromJson
-     */
+
     public function testCreateEntity(): void
     {
         $this->runCreateTests();

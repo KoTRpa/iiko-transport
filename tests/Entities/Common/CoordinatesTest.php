@@ -3,11 +3,17 @@
 namespace KMA\IikoTransport\Tests\Entities\Common;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Common\Coordinates;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Common\Coordinates
+ */
 class CoordinatesTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/Coordinates.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Coordinates::class;
+    protected array $fixture = [
+        'name' => 'Common/Coordinates'
+    ];
+    protected string $entityClass = Coordinates::class;
     protected array $fields = [
         'latitude',
         'longitude',
