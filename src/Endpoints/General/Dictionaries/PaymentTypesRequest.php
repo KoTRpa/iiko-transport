@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Dictionaries\PaymentTypes;
+namespace KMA\IikoTransport\Endpoints\General\Dictionaries;
 
 use KMA\IikoTransport\Contracts\IRequestBody;
 use KMA\IikoTransport\Entities\Entity;

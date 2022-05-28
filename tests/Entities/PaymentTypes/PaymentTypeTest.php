@@ -1,14 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\PaymentTypes;
+namespace KMA\IikoTransport\Tests\Entities\PaymentTypes;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\Common\PaymentTypes\PaymentType;
+use KMA\IikoTransport\Entities\PaymentTypes\PaymentType;
 use KMA\IikoTransport\Entities\Common\Terminals\TerminalGroup;
 
 /**
- * @covers \KMA\IikoTransport\Entities\Common\PaymentTypes\PaymentType
+ * @covers \KMA\IikoTransport\Entities\PaymentTypes\PaymentType
  */
 class PaymentTypeTest extends EntityTestCase
 {

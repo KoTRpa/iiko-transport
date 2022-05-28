@@ -1,18 +1,18 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Dictionaries\PaymentTypes;
+namespace KMA\IikoTransport\Endpoints\General\Dictionaries;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\Common\PaymentTypes\PaymentType;
+use KMA\IikoTransport\Entities\PaymentTypes\PaymentType;
 
 class PaymentTypesResponse extends Entity
 {
     use HasCorrelationId;
 
     /**
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\PaymentTypes\PaymentType>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\PaymentTypes\PaymentType>
      * List of payment types and terminal groups where they are available.
      */
     public Collection $paymentTypes;

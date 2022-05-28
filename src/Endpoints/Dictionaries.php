@@ -2,9 +2,8 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Dictionaries\PaymentTypes;
-use KMA\IikoTransport\Entities\Dictionaries\PaymentTypes\PaymentTypesRequest;
-use KMA\IikoTransport\Entities\Dictionaries\PaymentTypes\PaymentTypesResponse;
+use KMA\IikoTransport\Endpoints\General\Dictionaries\PaymentTypesRequest;
+use KMA\IikoTransport\Endpoints\General\Dictionaries\PaymentTypesResponse;
 
 /**
  * Dictionaries APIs
@@ -17,9 +16,9 @@ trait Dictionaries
     /**
      * Fetch payment types
      *
-     * @param \KMA\IikoTransport\Entities\Dictionaries\PaymentTypes\PaymentTypesRequest $request
+     * @param \KMA\IikoTransport\Endpoints\General\Dictionaries\PaymentTypesRequest $request
      *
-     * @return \KMA\IikoTransport\Entities\Dictionaries\PaymentTypes\PaymentTypesResponse
+     * @return \KMA\IikoTransport\Endpoints\General\Dictionaries\PaymentTypesResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException

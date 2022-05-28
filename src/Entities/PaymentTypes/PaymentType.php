@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Common\PaymentTypes;
+namespace KMA\IikoTransport\Entities\PaymentTypes;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Entities\Entity;
