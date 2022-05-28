@@ -1,13 +1,24 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Nomenclature;
+namespace KMA\IikoTransport\Tests\Entities\Nomenclature;
 
+use Illuminate\Support\Collection;
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Nomenclature\GroupModifierInfo;
+use KMA\IikoTransport\Entities\Nomenclature\SimpleModifierInfo;
+use KMA\IikoTransport\Entities\Nomenclature\SizePrice;
+use KMA\IikoTransport\Entities\Nomenclature\ProductInfo;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Nomenclature\ProductInfo
+ */
 class ProductInfoTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/ProductInfo.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Nomenclature\ProductInfo::class;
+    protected array $fixture = [
+        'name' => 'Menu/NomenclatureResponse',
+        'path' => 'products'
+    ];
+    protected string $entityClass = ProductInfo::class;
     protected array $fields = [
         'fatAmount',
         'proteinsAmount',
@@ -49,17 +60,6 @@ class ProductInfoTest extends EntityTestCase
         'seoTitle',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ProductInfo::__construct
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ProductInfo::fromArray
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ProductInfo::fromJson
-     *
-     * @uses \KMA\IikoTransport\Entities\Common\Nomenclature\ChildModifierInfo::__construct
-     * @uses \KMA\IikoTransport\Entities\Common\Nomenclature\GroupModifierInfo::__construct
-     * @uses \KMA\IikoTransport\Entities\Common\Nomenclature\SimpleModifierInfo::__construct
-     * @uses \KMA\IikoTransport\Entities\Common\Nomenclature\SizePrice::__construct
-     * @uses \KMA\IikoTransport\Entities\Common\Price::__construct
-     */
     public function testCreateEntity(): void
     {
         $this->runCreateTests();
@@ -87,12 +87,12 @@ class ProductInfoTest extends EntityTestCase
         $this->assertIsString($entity->measureUnit);
 
         $this->assertInstanceOf(
-            \Illuminate\Support\Collection::class,
+            Collection::class,
             $entity->sizePrices
         );
         $entity->sizePrices->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\SizePrice::class,
+                SizePrice::class,
                 $item
             );
         });
@@ -103,18 +103,18 @@ class ProductInfoTest extends EntityTestCase
         );
         $entity->modifiers->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\SimpleModifierInfo::class,
+                SimpleModifierInfo::class,
                 $item
             );
         });
 
         $this->assertInstanceOf(
-            \Illuminate\Support\Collection::class,
+            Collection::class,
             $entity->groupModifiers
         );
         $entity->groupModifiers->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\GroupModifierInfo::class,
+                GroupModifierInfo::class,
                 $item
             );
         });

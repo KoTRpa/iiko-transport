@@ -1,13 +1,20 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Nomenclature;
+namespace KMA\IikoTransport\Tests\Entities\Nomenclature;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Nomenclature\Size;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Nomenclature\Size
+ */
 class SizeTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/Size.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Nomenclature\Size::class;
+    protected array $fixture = [
+        'name' => 'Menu/NomenclatureResponse',
+        'path' => 'sizes'
+    ];
+    protected string $entityClass = Size::class;
     protected array $fields = [
         'id',
         'name',
@@ -15,11 +22,6 @@ class SizeTest extends EntityTestCase
         'isDefault',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\Size::__construct
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\Size::fromArray
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\Size::fromJson
-     */
     public function testCreateEntity(): void
     {
         $this->runCreateTests();

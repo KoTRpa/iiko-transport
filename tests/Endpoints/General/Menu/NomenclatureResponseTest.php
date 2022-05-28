@@ -1,13 +1,16 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Menu\Menu;
+namespace KMA\IikoTransport\Tests\Endpoints\General\Menu;
 
+use KMA\IikoTransport\Endpoints\General\Menu\NomenclatureResponse;
 use KMA\IikoTransport\Tests\EntityTestCase;
 
-class MenuResponseTest extends EntityTestCase
+class NomenclatureResponseTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/MenuResponse.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Menu\NomenclatureResponse::class;
+    protected array $fixture = [
+        'name' => 'Menu/NomenclatureResponse'
+    ];
+    protected string $entityClass = NomenclatureResponse::class;
     protected array $fields = [
         'correlationId',
         'groups',
@@ -32,7 +35,7 @@ class MenuResponseTest extends EntityTestCase
         );
         $entity->groups->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\ProductsGroupInfo::class,
+                \KMA\IikoTransport\Entities\Nomenclature\ProductsGroupInfo::class,
                 $item
             );
         });
@@ -43,7 +46,7 @@ class MenuResponseTest extends EntityTestCase
         );
         $entity->productCategories->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\ProductCategoryInfo::class,
+                \KMA\IikoTransport\Entities\Nomenclature\ProductCategoryInfo::class,
                 $item
             );
         });
@@ -54,7 +57,7 @@ class MenuResponseTest extends EntityTestCase
         );
         $entity->products->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\ProductInfo::class,
+                \KMA\IikoTransport\Entities\Nomenclature\ProductInfo::class,
                 $item
             );
         });
@@ -65,7 +68,7 @@ class MenuResponseTest extends EntityTestCase
         );
         $entity->sizes->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\Size::class,
+                \KMA\IikoTransport\Entities\Nomenclature\Size::class,
                 $item
             );
         });

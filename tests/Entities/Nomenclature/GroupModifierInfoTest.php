@@ -1,13 +1,22 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Nomenclature;
+namespace KMA\IikoTransport\Tests\Entities\Nomenclature;
 
+use Illuminate\Support\Collection;
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Nomenclature\ChildModifierInfo;
+use KMA\IikoTransport\Entities\Nomenclature\GroupModifierInfo;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Nomenclature\GroupModifierInfo
+ */
 class GroupModifierInfoTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/GroupModifierInfo.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Nomenclature\GroupModifierInfo::class;
+    protected array $fixture = [
+        'name' => 'Menu/NomenclatureResponse',
+        'path' => 'products.groupModifiers'
+    ];
+    protected string $entityClass = GroupModifierInfo::class;
     protected array $fields = [
         'id',
         'minAmount',
@@ -21,12 +30,6 @@ class GroupModifierInfoTest extends EntityTestCase
         'freeOfChargeAmount',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\GroupModifierInfo::__construct
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\GroupModifierInfo::fromArray
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\GroupModifierInfo::fromJson
-     * @uses \KMA\IikoTransport\Entities\Common\Nomenclature\ChildModifierInfo::__construct
-     */
     public function testCreateEntity(): void
     {
         $this->runCreateTests();
@@ -41,12 +44,12 @@ class GroupModifierInfoTest extends EntityTestCase
         $this->assertIsBool($entity->childModifiersHaveMinMaxRestrictions);
 
         $this->assertInstanceOf(
-            \Illuminate\Support\Collection::class,
+            Collection::class,
             $entity->childModifiers
         );
         $entity->childModifiers->each(function ($item) {
             $this->assertInstanceOf(
-                \KMA\IikoTransport\Entities\Common\Nomenclature\ChildModifierInfo::class,
+                ChildModifierInfo::class,
                 $item
             );
         });

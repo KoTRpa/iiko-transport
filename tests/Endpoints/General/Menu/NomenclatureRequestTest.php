@@ -1,13 +1,16 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Menu\Menu;
+namespace KMA\IikoTransport\Tests\Endpoints\General\Menu;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Endpoints\General\Menu\NomenclatureRequest;
 
-class MenuRequestTest extends EntityTestCase
+class NomenclatureRequestTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/MenuRequest.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Menu\NomenclatureRequest::class;
+    protected array $fixture = [
+        'name' => 'Menu/NomenclatureRequest'
+    ];
+    protected string $entityClass = NomenclatureRequest::class;
     protected array $fields = [
         'organizationId',
         'startRevision',

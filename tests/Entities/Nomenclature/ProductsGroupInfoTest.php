@@ -1,13 +1,20 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Nomenclature;
+namespace KMA\IikoTransport\Tests\Entities\Nomenclature;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Nomenclature\ProductsGroupInfo;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Nomenclature\ProductsGroupInfo
+ */
 class ProductsGroupInfoTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/ProductsGroupInfo.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Nomenclature\ProductsGroupInfo::class;
+    protected array $fixture = [
+        'name' => 'Menu/NomenclatureResponse',
+        'path' => 'groups'
+    ];
+    protected string $entityClass = ProductsGroupInfo::class;
     protected array $fields = [
         'imageLinks',
         'parentGroup',
@@ -27,11 +34,6 @@ class ProductsGroupInfoTest extends EntityTestCase
         'seoTitle',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ProductsGroupInfo::__construct
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ProductsGroupInfo::fromArray
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ProductsGroupInfo::fromJson
-     */
     public function testCreateEntity(): void
     {
         $this->runCreateTests();

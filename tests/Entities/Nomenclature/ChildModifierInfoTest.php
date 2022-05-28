@@ -1,13 +1,20 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Nomenclature;
+namespace KMA\IikoTransport\Tests\Entities\Nomenclature;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
+use KMA\IikoTransport\Entities\Nomenclature\ChildModifierInfo;
 
+/**
+ * @covers \KMA\IikoTransport\Entities\Nomenclature\ChildModifierInfo
+ */
 class ChildModifierInfoTest extends EntityTestCase
 {
-    protected string $jsonPath = __DIR__ . '/ChildModifierInfo.json';
-    protected string $entityClass = \KMA\IikoTransport\Entities\Common\Nomenclature\ChildModifierInfo::class;
+    protected array $fixture = [
+        'name' => 'Menu/NomenclatureResponse',
+        'path' => 'products.groupModifiers.childModifiers'
+    ];
+    protected string $entityClass = ChildModifierInfo::class;
     protected array $fields = [
         'id',
         'defaultAmount',
@@ -19,11 +26,6 @@ class ChildModifierInfoTest extends EntityTestCase
         'freeOfChargeAmount',
     ];
 
-    /**
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ChildModifierInfo::__construct
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ChildModifierInfo::fromArray
-     * @covers \KMA\IikoTransport\Entities\Common\Nomenclature\ChildModifierInfo::fromJson
-     */
     public function testCreateEntity(): void
     {
         $this->runCreateTests();

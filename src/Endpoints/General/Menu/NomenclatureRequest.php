@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Menu;
+namespace KMA\IikoTransport\Endpoints\General\Menu;
 
 use JetBrains\PhpStorm\ArrayShape;
 use KMA\IikoTransport\Contracts\IRequestBody;

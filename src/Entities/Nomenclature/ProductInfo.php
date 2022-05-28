@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Common\Nomenclature;
+namespace KMA\IikoTransport\Entities\Nomenclature;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Entities\Entity;
@@ -99,21 +99,21 @@ class ProductInfo extends Entity
     /**
      * Prices
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Nomenclature\SizePrice>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Nomenclature\SizePrice>
      */
     public Collection $sizePrices;
 
     /**
      * Modifiers
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Nomenclature\SimpleModifierInfo>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Nomenclature\SimpleModifierInfo>
      */
     public Collection $modifiers;
 
     /**
      * Modifier groups
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Nomenclature\GroupModifierInfo>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Nomenclature\GroupModifierInfo>
      */
     public Collection $groupModifiers;
 

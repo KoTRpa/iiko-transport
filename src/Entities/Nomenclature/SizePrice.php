@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Common\Nomenclature;
+namespace KMA\IikoTransport\Entities\Nomenclature;
 
 use KMA\IikoTransport\Entities\Common\Price;
 use KMA\IikoTransport\Entities\Entity;

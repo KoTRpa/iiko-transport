@@ -2,8 +2,8 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Menu\NomenclatureRequest;
-use KMA\IikoTransport\Entities\Menu\NomenclatureResponse;
+use KMA\IikoTransport\Endpoints\General\Menu\NomenclatureRequest;
+use KMA\IikoTransport\Endpoints\General\Menu\NomenclatureResponse;
 
 /**
  * Menu APIs
@@ -14,9 +14,9 @@ use KMA\IikoTransport\Entities\Menu\NomenclatureResponse;
 trait Menu
 {
     /**
-     * @param \KMA\IikoTransport\Entities\Menu\NomenclatureRequest $req
+     * @param \KMA\IikoTransport\Endpoints\General\Menu\NomenclatureRequest $req
      *
-     * @return \KMA\IikoTransport\Entities\Menu\NomenclatureResponse
+     * @return \KMA\IikoTransport\Endpoints\General\Menu\NomenclatureResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException

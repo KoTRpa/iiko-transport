@@ -1,14 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Menu;
+namespace KMA\IikoTransport\Endpoints\General\Menu;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
-use KMA\IikoTransport\Entities\Common\Nomenclature\ProductCategoryInfo;
-use KMA\IikoTransport\Entities\Common\Nomenclature\ProductInfo;
-use KMA\IikoTransport\Entities\Common\Nomenclature\ProductsGroupInfo;
-use KMA\IikoTransport\Entities\Common\Nomenclature\Size;
 use KMA\IikoTransport\Entities\Entity;
+use KMA\IikoTransport\Entities\Nomenclature\ProductCategoryInfo;
+use KMA\IikoTransport\Entities\Nomenclature\ProductInfo;
+use KMA\IikoTransport\Entities\Nomenclature\ProductsGroupInfo;
+use KMA\IikoTransport\Entities\Nomenclature\Size;
 
 class NomenclatureResponse extends Entity
 {
@@ -17,28 +17,28 @@ class NomenclatureResponse extends Entity
     /**
      * Stock list group
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Nomenclature\ProductsGroupInfo>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Nomenclature\ProductsGroupInfo>
      */
     public Collection $groups;
 
     /**
      * Menu item category
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Nomenclature\ProductCategoryInfo>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Nomenclature\ProductCategoryInfo>
      */
     public Collection $productCategories;
 
     /**
      * Menu items and modifiers
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Nomenclature\ProductInfo>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Nomenclature\ProductInfo>
      */
     public Collection $products;
 
     /**
      * Item sizes
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Nomenclature\Size>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Nomenclature\Size>
      */
     public Collection $sizes;
 
