@@ -3,7 +3,7 @@
 namespace KMA\IikoTransport\Endpoints;
 
 use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
-use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryResponse;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
 use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
@@ -20,7 +20,7 @@ trait Delivery
     /**
      * @param \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest $request
      *
-     * @return \KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse
+     * @return \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException

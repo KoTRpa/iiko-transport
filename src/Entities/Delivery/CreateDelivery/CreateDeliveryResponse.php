@@ -1,9 +1,10 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Delivery\Response;
+namespace KMA\IikoTransport\Entities\Delivery\CreateDelivery;
 
-use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
+use KMA\IikoTransport\Entities\Entity;
+use KMA\IikoTransport\Entities\Delivery\Response\OrderInfo;
 
 class CreateDeliveryResponse extends Entity
 {

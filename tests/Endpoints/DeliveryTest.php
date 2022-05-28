@@ -5,7 +5,7 @@ namespace KMA\IikoTransport\Tests\Endpoints;
 use KMA\IikoTransport\Tests\EndpointTestCase;
 
 use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
-use KMA\IikoTransport\Entities\Delivery\Response\CreateDeliveryResponse;
+use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryResponse;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
 use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
