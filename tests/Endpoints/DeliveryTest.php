@@ -10,6 +10,8 @@ use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
 use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
 use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesResponse;
+use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsRequest;
+use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsResponse;
 
 class DeliveryTest extends EndpointTestCase
 {
@@ -52,6 +54,20 @@ class DeliveryTest extends EndpointTestCase
             CitiesRequest::class,
             CitiesResponse::class,
             '/api/1/cities'
+        );
+    }
+
+    /**
+     * @covers \KMA\IikoTransport\IikoTransport::streets
+     */
+    public function testStreets()
+    {
+        $this->runTests(
+            'Delivery/StreetsResponse',
+            'streets',
+            StreetsRequest::class,
+            StreetsResponse::class,
+            '/api/1/streets/by_city'
         );
     }
 }

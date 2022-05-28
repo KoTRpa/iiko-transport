@@ -8,6 +8,8 @@ use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
 use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
 use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesResponse;
+use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsRequest;
+use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsResponse;
 
 /**
  * Delivery APIs
@@ -82,5 +84,28 @@ trait Delivery
         );
 
         return CitiesResponse::fromJson($response->getBody());
+    }
+
+
+    /**
+     * @param StreetsRequest $request
+     *
+     * @return StreetsResponse
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     */
+    public function streets(StreetsRequest $request): StreetsResponse
+    {
+        $response = $this->post(
+            'streets/by_city',
+            $request
+        );
+
+        return StreetsResponse::fromJson($response->getBody());
     }
 }
