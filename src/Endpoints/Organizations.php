@@ -2,8 +2,8 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Organizations\OrganizationsRequest;
-use KMA\IikoTransport\Entities\Organizations\OrganizationsResponse;
+use KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsRequest;
+use KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsResponse;
 
 /**
  * Organizations APIs
@@ -14,9 +14,9 @@ use KMA\IikoTransport\Entities\Organizations\OrganizationsResponse;
 trait Organizations
 {
     /**
-     * @param \KMA\IikoTransport\Entities\Organizations\OrganizationsRequest $request
+     * @param \KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsRequest $request
      *
-     * @return \KMA\IikoTransport\Entities\Organizations\OrganizationsResponse
+     * @return \KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException

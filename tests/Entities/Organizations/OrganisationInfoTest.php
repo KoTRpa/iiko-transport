@@ -1,12 +1,12 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Common\Organizations;
+namespace KMA\IikoTransport\Tests\Entities\Organizations;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\Common\Organizations\OrganizationInfo;
+use KMA\IikoTransport\Entities\Organizations\OrganizationInfo;
 
 /**
- * @covers \KMA\IikoTransport\Entities\Common\Organizations\OrganizationInfo
+ * @covers \KMA\IikoTransport\Entities\Organizations\OrganizationInfo
  */
 class OrganisationInfoTest extends EntityTestCase
 {

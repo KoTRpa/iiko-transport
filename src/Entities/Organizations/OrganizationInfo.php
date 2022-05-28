@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Common\Organizations;
+namespace KMA\IikoTransport\Entities\Organizations;
 
 use KMA\IikoTransport\Entities\Entity;
 

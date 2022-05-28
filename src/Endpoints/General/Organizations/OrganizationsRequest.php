@@ -1,6 +1,6 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Organizations;
+namespace KMA\IikoTransport\Endpoints\General\Organizations;
 
 use JetBrains\PhpStorm\ArrayShape;
 use KMA\IikoTransport\Entities\Entity;

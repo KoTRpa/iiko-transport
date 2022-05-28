@@ -1,11 +1,11 @@
 <?php
 
-namespace KMA\IikoTransport\Entities\Organizations;
+namespace KMA\IikoTransport\Endpoints\General\Organizations;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
 use KMA\IikoTransport\Entities\Entity;
-use KMA\IikoTransport\Entities\Common\Organizations\OrganizationInfo;
+use KMA\IikoTransport\Entities\Organizations\OrganizationInfo;
 
 class OrganizationsResponse extends Entity
 {
@@ -13,7 +13,7 @@ class OrganizationsResponse extends Entity
 
     /**
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Common\Organizations\OrganizationInfo>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\Organizations\OrganizationInfo>
      * List of organizations
      * Can be obtained by /api/1/organizations operation
      */

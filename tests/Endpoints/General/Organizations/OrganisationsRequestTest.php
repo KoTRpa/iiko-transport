@@ -1,12 +1,12 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Organizations;
+namespace KMA\IikoTransport\Tests\Endpoints\General\Organizations;
 
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\Organizations\OrganizationsRequest;
+use KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsRequest;
 
 /**
- * @covers \KMA\IikoTransport\Entities\Organizations\OrganizationsRequest
+ * @covers \KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsRequest
  */
 class OrganisationsRequestTest extends EntityTestCase
 {

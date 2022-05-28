@@ -1,14 +1,14 @@
 <?php
 
-namespace KMA\IikoTransport\Tests\Entities\Organizations;
+namespace KMA\IikoTransport\Tests\Endpoints\General\Organizations;
 
 use Illuminate\Support\Collection;
 use KMA\IikoTransport\Tests\EntityTestCase;
-use KMA\IikoTransport\Entities\Organizations\OrganizationsResponse;
-use KMA\IikoTransport\Entities\Common\Organizations\OrganizationInfo;
+use KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsResponse;
+use KMA\IikoTransport\Entities\Organizations\OrganizationInfo;
 
 /**
- * @covers \KMA\IikoTransport\Entities\Organizations\OrganizationsResponse
+ * @covers \KMA\IikoTransport\Endpoints\General\Organizations\OrganizationsResponse
  */
 class OrganisationsResponseTest extends EntityTestCase
 {
