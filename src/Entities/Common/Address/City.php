@@ -51,24 +51,4 @@ class City extends Entity
             $this->additionalInfo = $data['additionalInfo'] ?? null;
         }
     }
-
-    /**
-     * @param array $data
-     * @return void
-     * @throws \InvalidArgumentException
-     */
-    private function validate(array $data): void
-    {
-        if (!isset($data['id'])) {
-            throw new \InvalidArgumentException('Field "id" is undefined');
-        }
-
-        if (!isset($data['organizationId'])) {
-            throw new \InvalidArgumentException('Field "organizationId" is undefined');
-        }
-
-        if (!isset($data['name'])) {
-            throw new \InvalidArgumentException('Field "name" is undefined');
-        }
-    }
 }
