@@ -2,17 +2,17 @@
 
 namespace KMA\IikoTransport\Endpoints;
 
-use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
-use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryResponse;
-use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
-use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
-use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
-use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesResponse;
-use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsRequest;
-use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\CitiesRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\CitiesResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse;
 
 /**
- * Delivery APIs
+ * Deliveries APIs
  *
  * @mixin \KMA\IikoTransport\Http\Http
  * @mixin \KMA\IikoTransport\IikoTransport
@@ -20,9 +20,9 @@ use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsResponse;
 trait Delivery
 {
     /**
-     * @param \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest $request
+     * @param \KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest $request
      *
-     * @return \KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryResponse
+     * @return \KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException

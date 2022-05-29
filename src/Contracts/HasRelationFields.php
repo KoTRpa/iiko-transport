@@ -2,6 +2,8 @@
 
 namespace KMA\IikoTransport\Contracts;
 
+use JetBrains\PhpStorm\ArrayShape;
+
 trait HasRelationFields
 {
     /**
@@ -15,4 +17,13 @@ trait HasRelationFields
      * @var string name from related Entity
      */
     public string $name;
+
+    protected function setRelatedFields(
+        #[ArrayShape(['id' => 'string', 'name' => 'string'])]
+        array $data
+    ): void
+    {
+        $this->id = $data['id'];
+        $this->name = $data['name'];
+    }
 }

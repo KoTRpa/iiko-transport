@@ -2,16 +2,15 @@
 
 namespace KMA\IikoTransport\Tests\Endpoints;
 
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\CitiesRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\CitiesResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse;
 use KMA\IikoTransport\Tests\EndpointTestCase;
-
-use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryRequest;
-use KMA\IikoTransport\Entities\Delivery\CreateDelivery\CreateDeliveryResponse;
-use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdRequest;
-use KMA\IikoTransport\Entities\Delivery\Retrieve\RetrieveByIdResponse;
-use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesRequest;
-use KMA\IikoTransport\Entities\Delivery\Addresses\CitiesResponse;
-use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsRequest;
-use KMA\IikoTransport\Entities\Delivery\Addresses\StreetsResponse;
 
 class DeliveryTest extends EndpointTestCase
 {
@@ -21,7 +20,7 @@ class DeliveryTest extends EndpointTestCase
     public function testCreateDelivery()
     {
         $this->runTests(
-            'Delivery/CreateDeliveryResponse',
+            'Deliveries/CreateDeliveryResponse',
             'createDelivery',
             CreateDeliveryRequest::class,
             CreateDeliveryResponse::class,
@@ -35,7 +34,7 @@ class DeliveryTest extends EndpointTestCase
     public function testRetrieveById()
     {
         $this->runTests(
-            'Delivery/RetrieveByIdResponse',
+            'Deliveries/RetrieveByIdResponse',
             'retrieveById',
             RetrieveByIdRequest::class,
             RetrieveByIdResponse::class,
@@ -49,7 +48,7 @@ class DeliveryTest extends EndpointTestCase
     public function testCities()
     {
         $this->runTests(
-            'Delivery/CitiesResponse',
+            'Deliveries/CitiesResponse',
             'cities',
             CitiesRequest::class,
             CitiesResponse::class,
@@ -63,7 +62,7 @@ class DeliveryTest extends EndpointTestCase
     public function testStreets()
     {
         $this->runTests(
-            'Delivery/StreetsResponse',
+            'Deliveries/StreetsResponse',
             'streets',
             StreetsRequest::class,
             StreetsResponse::class,

@@ -3,9 +3,9 @@
 namespace KMA\IikoTransport\Tests\Endpoints\General\TerminalGroups;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Tests\EntityTestCase;
 use KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsResponse;
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap;
+use KMA\IikoTransport\Entities\RmsItemsWrap\TerminalGroupsWrap;
+use KMA\IikoTransport\Tests\EntityTestCase;
 
 /**
  * @covers \KMA\IikoTransport\Endpoints\General\TerminalGroups\TerminalGroupsResponse

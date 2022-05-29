@@ -8,7 +8,7 @@ class TerminalGroup extends Entity
 {
     /**
      * @required
-     * @var string <uuid> Delivery group ID.
+     * @var string <uuid> Deliveries group ID.
      * Can be obtained by /api/1/terminal_groups operation
      */
     public string $id;

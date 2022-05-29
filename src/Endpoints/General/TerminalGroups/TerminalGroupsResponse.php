@@ -3,9 +3,9 @@
 namespace KMA\IikoTransport\Endpoints\General\TerminalGroups;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Entities\Entity;
 use KMA\IikoTransport\Contracts\HasCorrelationId;
-use KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap;
+use KMA\IikoTransport\Entities\Entity;
+use KMA\IikoTransport\Entities\RmsItemsWrap\TerminalGroupsWrap;
 
 class TerminalGroupsResponse extends Entity
 {
@@ -14,7 +14,7 @@ class TerminalGroupsResponse extends Entity
     /**
      * List of terminal groups broken down by organizations
      * @required
-     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\TerminalGroups\TerminalGroupsWrap>
+     * @var \Illuminate\Support\Collection<int, \KMA\IikoTransport\Entities\RmsItemsWrap\TerminalGroupsWrap>
      */
     public Collection $terminalGroups;
 
