@@ -19,9 +19,11 @@ class PaymentTypesResponse extends Entity
 
     public function __construct(?array $data = null)
     {
-        $this->correlationId = $data['correlationId'];
-        $this->paymentTypes =
-            collect($data['paymentTypes'])
-                ->map(fn (array $pt): PaymentType => PaymentType::fromArray($pt));
+        if (null !== $data) {
+            $this->setCorrelationId($data);
+            $this->paymentTypes =
+                collect($data['paymentTypes'])
+                    ->map(fn(array $pt): PaymentType => PaymentType::fromArray($pt));
+        }
     }
 }

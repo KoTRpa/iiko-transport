@@ -1,0 +1,33 @@
+{
+    "correlationId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+    "discounts": [
+        {
+            "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+            "items": [
+                {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "name": "string",
+                    "percent": 0,
+                    "isCategorisedDiscount": true,
+                    "productCategoryDiscounts": [
+                        {
+                            "categoryId": "337f5e5d-288b-40d5-be14-901cc3acacc0",
+                            "categoryName": "string",
+                            "percent": 0
+                        }
+                    ],
+                    "comment": "string",
+                    "canBeAppliedSelectively": true,
+                    "minOrderSum": 0,
+                    "mode": "Percent",
+                    "sum": 0,
+                    "canApplyByCardNumber": true,
+                    "isManual": true,
+                    "isCard": true,
+                    "isAutomatic": true,
+                    "isDeleted": true
+                }
+            ]
+        }
+    ]
+}
