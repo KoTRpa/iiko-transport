@@ -2,9 +2,11 @@
 
 namespace KMA\IikoTransport\Tests\Endpoints;
 
-use KMA\IikoTransport\Tests\EndpointTestCase;
+use KMA\IikoTransport\Endpoints\General\Dictionaries\DiscountsRequest;
+use KMA\IikoTransport\Endpoints\General\Dictionaries\DiscountsResponse;
 use KMA\IikoTransport\Endpoints\General\Dictionaries\PaymentTypesRequest;
 use KMA\IikoTransport\Endpoints\General\Dictionaries\PaymentTypesResponse;
+use KMA\IikoTransport\Tests\EndpointTestCase;
 
 class DictionariesTest extends EndpointTestCase
 {
@@ -19,6 +21,19 @@ class DictionariesTest extends EndpointTestCase
             PaymentTypesRequest::class,
             PaymentTypesResponse::class,
             '/api/1/payment_types'
+        );
+    }
+    /**
+     * @covers \KMA\IikoTransport\IikoTransport::discounts
+     */
+    public function testDiscounts()
+    {
+        $this->runTests(
+            'Dictionaries/DiscountsResponse',
+            'discounts',
+            DiscountsRequest::class,
+            DiscountsResponse::class,
+            '/api/1/discounts'
         );
     }
 }
