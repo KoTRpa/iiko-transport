@@ -8,6 +8,8 @@ use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse;
 
@@ -108,4 +110,29 @@ trait Delivery
 
         return StreetsResponse::fromJson($response->getBody());
     }
+
+
+    /**
+     * @param DeliveryRestrictionsRequest $request
+     *
+     * @return DeliveryRestrictionsResponse
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     */
+    public function deliveryRestrictions(DeliveryRestrictionsRequest $request): DeliveryRestrictionsResponse
+    {
+        $response = $this->post(
+            'delivery_restrictions',
+            $request
+        );
+
+        return DeliveryRestrictionsResponse::fromJson($response->getBody());
+    }
+
+
 }

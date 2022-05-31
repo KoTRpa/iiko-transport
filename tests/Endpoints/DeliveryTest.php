@@ -8,6 +8,8 @@ use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse;
 use KMA\IikoTransport\Tests\EndpointTestCase;
@@ -67,6 +69,20 @@ class DeliveryTest extends EndpointTestCase
             StreetsRequest::class,
             StreetsResponse::class,
             '/api/1/streets/by_city'
+        );
+    }
+
+    /**
+     * @covers \KMA\IikoTransport\IikoTransport::deliveryRestrictions
+     */
+    public function testDeliveryRestrictions()
+    {
+        $this->runTests(
+            'Deliveries/RestrictionsResponse',
+            'deliveryRestrictions',
+            DeliveryRestrictionsRequest::class,
+            DeliveryRestrictionsResponse::class,
+            '/api/1/delivery_restrictions'
         );
     }
 }

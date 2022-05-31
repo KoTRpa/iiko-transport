@@ -1,0 +1,70 @@
+{
+    "correlationId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+    "deliveryRestrictions": [
+        {
+            "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+            "deliveryGeocodeServiceType": 1,
+            "deliveryRegionsMapUrl": "string",
+            "defaultDeliveryDurationInMinutes": 0,
+            "defaultSelfServiceDurationInMinutes": 0,
+            "useSameDeliveryDuration": true,
+            "useSameMinSum": true,
+            "defaultMinSum": 0,
+            "useSameWorkTimeInterval": true,
+            "defaultFrom": 0,
+            "defaultTo": 0,
+            "useSameRestrictionsOnAllWeek": true,
+            "restrictions": [
+                {
+                    "minSum": 0,
+                    "terminalGroupId": "4fab19a5-203c-4bf5-94eb-f572aa8b117b",
+                    "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+                    "zone": "string",
+                    "weekMap": 0,
+                    "from": 0,
+                    "to": 0,
+                    "priority": 0,
+                    "deliveryDurationInMinutes": 0,
+                    "deliveryServiceProductId": "bec293df-bc69-4f86-be1b-fcd5fad92dfb"
+                }
+            ],
+            "deliveryZones": [
+                {
+                    "name": "string",
+                    "coordinates": [
+                        {
+                            "latitude": 0,
+                            "longitude": 0
+                        }
+                    ],
+                    "addresses": [
+                        {
+                            "streetId": "16db97c5-c378-48d9-96c7-4c412955c014",
+                            "postcode": "string",
+                            "houses": {
+                                "type": 0,
+                                "startingNumber": 0,
+                                "maxNumber": 0,
+                                "isUnlimitedRange": true,
+                                "specificNumbers": [
+                                    "string"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "rejectOnGeocodingError": true,
+            "addDeliveryServiceCost": true,
+            "useSameDeliveryServiceProduct": true,
+            "defaultDeliveryServiceProductId": "cc625c75-d360-4132-b4bc-0280116f2a3f",
+            "useExternalAssignationService": true,
+            "frontTrustsCallCenterCheck": true,
+            "externalAssignationServiceUrl": "string",
+            "requireExactAddressForGeocoding": true,
+            "zonesMode": 0,
+            "autoAssignExternalDeliveries": true,
+            "actionOnValidationRejection": 1
+        }
+    ]
+}
