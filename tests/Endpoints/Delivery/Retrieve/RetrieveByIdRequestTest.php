@@ -2,18 +2,18 @@
 
 namespace KMA\IikoTransport\Tests\Endpoints\Delivery\Retrieve;
 
-use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdRequest;
 use KMA\IikoTransport\Tests\EntityTestCase;
 
 /**
- * @covers \KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest
+ * @covers \KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdRequest
  */
 class RetrieveByIdRequestTest extends EntityTestCase
 {
     protected array $fixture = [
-        'name' => 'Deliveries/RetrieveByIdRequest'
+        'name' => 'Deliveries/RetrieveDeliveryByIdRequest'
     ];
-    protected string $entityClass = RetrieveByIdRequest::class;
+    protected string $entityClass = RetrieveDeliveryByIdRequest::class;
     protected array $fields = [
         'organizationId',
         'orderIds',

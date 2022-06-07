@@ -5,7 +5,7 @@ namespace KMA\IikoTransport\Endpoints\Delivery\Retrieve;
 use KMA\IikoTransport\Contracts\IRequestBody;
 use KMA\IikoTransport\Entities\Entity;
 
-class RetrieveByIdRequest extends Entity implements IRequestBody
+class RetrieveDeliveryByIdRequest extends Entity implements IRequestBody
 {
     /**
      * @required

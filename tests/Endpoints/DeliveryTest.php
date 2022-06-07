@@ -10,8 +10,8 @@ use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsResponse;
-use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest;
-use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdResponse;
 use KMA\IikoTransport\Tests\EndpointTestCase;
 
 class DeliveryTest extends EndpointTestCase
@@ -31,15 +31,15 @@ class DeliveryTest extends EndpointTestCase
     }
 
     /**
-     * @covers \KMA\IikoTransport\IikoTransport::retrieveById
+     * @covers \KMA\IikoTransport\IikoTransport::retrieveDeliveryById
      */
-    public function testRetrieveById()
+    public function testRetrieveDeliveryById()
     {
         $this->runTests(
-            'Deliveries/RetrieveByIdResponse',
-            'retrieveById',
-            RetrieveByIdRequest::class,
-            RetrieveByIdResponse::class,
+            'Deliveries/RetrieveDeliveryByIdResponse',
+            'retrieveDeliveryById',
+            RetrieveDeliveryByIdRequest::class,
+            RetrieveDeliveryByIdResponse::class,
             '/api/1/deliveries/by_id'
         );
     }

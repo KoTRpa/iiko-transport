@@ -10,8 +10,8 @@ use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsResponse;
-use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdRequest;
-use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdResponse;
 
 /**
  * Deliveries APIs
@@ -44,9 +44,9 @@ trait Delivery
     }
 
     /**
-     * @param RetrieveByIdRequest $request
+     * @param \KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdRequest $request
      *
-     * @return RetrieveByIdResponse
+     * @return \KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException
@@ -55,21 +55,21 @@ trait Delivery
      * @throws \KMA\IikoTransport\Exceptions\ResponseException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      */
-    public function retrieveById(RetrieveByIdRequest $request): RetrieveByIdResponse
+    public function retrieveDeliveryById(RetrieveDeliveryByIdRequest $request): RetrieveDeliveryByIdResponse
     {
         $response = $this->post(
             'deliveries/by_id',
             $request
         );
 
-        return RetrieveByIdResponse::fromJson($response->getBody());
+        return RetrieveDeliveryByIdResponse::fromJson($response->getBody());
     }
 
 
     /**
-     * @param CitiesRequest $request
+     * @param \KMA\IikoTransport\Endpoints\Delivery\Addresses\CitiesRequest $request
      *
-     * @return CitiesResponse
+     * @return \KMA\IikoTransport\Endpoints\Delivery\Addresses\CitiesResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException
@@ -90,9 +90,9 @@ trait Delivery
 
 
     /**
-     * @param StreetsRequest $request
+     * @param \KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsRequest $request
      *
-     * @return StreetsResponse
+     * @return \KMA\IikoTransport\Endpoints\Delivery\Addresses\StreetsResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException
@@ -113,9 +113,9 @@ trait Delivery
 
 
     /**
-     * @param DeliveryRestrictionsRequest $request
+     * @param \KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsRequest $request
      *
-     * @return DeliveryRestrictionsResponse
+     * @return \KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsResponse
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \JsonException

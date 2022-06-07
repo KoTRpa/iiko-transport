@@ -7,7 +7,7 @@ use KMA\IikoTransport\Contracts\HasCorrelationId;
 use KMA\IikoTransport\Entities\Deliveries\Response\Order\OrderInfo;
 use KMA\IikoTransport\Entities\Entity;
 
-class RetrieveByIdResponse extends Entity
+class RetrieveDeliveryByIdResponse extends Entity
 {
     use HasCorrelationId;
 

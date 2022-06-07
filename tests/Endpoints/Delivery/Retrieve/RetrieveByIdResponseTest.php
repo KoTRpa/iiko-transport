@@ -3,19 +3,19 @@
 namespace KMA\IikoTransport\Tests\Endpoints\Delivery\Retrieve;
 
 use Illuminate\Support\Collection;
-use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdResponse;
 use KMA\IikoTransport\Entities\Deliveries\Response\Order\OrderInfo;
 use KMA\IikoTransport\Tests\EntityTestCase;
 
 /**
- * @covers \KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveByIdResponse
+ * @covers \KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdResponse
  */
 class RetrieveByIdResponseTest extends EntityTestCase
 {
     protected array $fixture = [
-        'name' => 'Deliveries/RetrieveByIdResponse'
+        'name' => 'Deliveries/RetrieveDeliveryByIdResponse'
     ];
-    protected string $entityClass = RetrieveByIdResponse::class;
+    protected string $entityClass = RetrieveDeliveryByIdResponse::class;
     protected array $fields = [
         'correlationId',
         'orders',
