@@ -83,7 +83,7 @@ class OrderItemModifier extends Entity
             $this->price = $data['price'];
             $this->pricePredefined = $data['pricePredefined'];
             $this->resultSum = $data['resultSum'];
-            $this->deleted = Deleted::fromArray($data['deleted']);
+            $this->deleted = isset($data['deleted']) ? Deleted::fromArray($data['deleted']) : null;
             $this->positionId = $data['positionId'] ?? null;
             $this->defaultAmount = $data['defaultAmount'] ?? null;
             $this->hideIfDefaultAmount = $data['hideIfDefaultAmount'] ?? null;
