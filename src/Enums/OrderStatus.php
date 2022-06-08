@@ -14,4 +14,25 @@ enum OrderStatus: string
     case Delivered = 'Delivered';
     case Closed = 'Closed';
     case Cancelled = 'Cancelled';
+
+    /**
+     * Status priority
+     *
+     * @return int
+     */
+    public function order(): int
+    {
+        return match($this) {
+            self::Unconfirmed => 1,
+            self::WaitCooking => 2,
+            self::ReadyForCooking => 3,
+            self::CookingStarted => 4,
+            self::CookingCompleted => 5,
+            self::Waiting => 6,
+            self::OnWay => 7,
+            self::Delivered => 8,
+            self::Closed => 9,
+            self::Cancelled => 10
+        };
+    }
 }
