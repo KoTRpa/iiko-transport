@@ -35,4 +35,16 @@ enum OrderStatus: string
             self::Cancelled => 10
         };
     }
+
+    /**
+     * Is final state
+     * @return bool
+     */
+    public function isFinal(): bool
+    {
+        return match($this) {
+            self::Closed, self::Cancelled => true,
+            default => false
+        };
+    }
 }
