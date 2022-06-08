@@ -107,7 +107,9 @@ class OrderItem extends Entity
             $this->taxPercent = $data['taxPercent'] ?? null;
             $this->type = $data['type'];
             $this->status = $data['status'];
-            $this->deleted = Deleted::fromArray($data['deleted']);
+            $this->deleted = isset($data['deleted'])
+                ? Deleted::fromArray($data['deleted'])
+                : null;
             $this->amount = $data['amount'];
             $this->comment = $data['comment'] ?? null;
             $this->whenPrinted = $data['whenPrinted'] ?? null;
