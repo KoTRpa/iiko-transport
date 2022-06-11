@@ -30,9 +30,6 @@ class OrganisationInfoTest extends EntityTestCase
     {
         $this->assertIsUuid($entity->id);
         $this->assertIsString($entity->name);
-        $this->assertContains($entity->responseType, [
-            'Simple',
-            'Extended',
-        ]);
+        $this->assertEquals('Simple', $entity->responseType);
     }
 }

@@ -1,0 +1,31 @@
+{
+    "correlationId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+    "organizations": [
+        {
+            "responseType": "Extended",
+            "country": "string",
+            "restaurantAddress": "string",
+            "latitude": 0.0,
+            "longitude": 0.0,
+            "useUaeAddressingSystem": false,
+            "version": "string",
+            "currencyIsoName": "RUB",
+            "currencyMinimumDenomination": 0.0,
+            "countryPhoneCode": "7",
+            "marketingSourceRequiredInDelivery": false,
+            "defaultDeliveryCityId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+            "deliveryCityIds": [
+                "48fb4cd3-2ef6-4479-bea1-7c92721b988c"
+            ],
+            "deliveryServiceType": "CourierAndSelfService",
+            "defaultCallCenterPaymentTypeId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+            "orderItemCommentEnabled": true,
+            "inn": "string",
+            "addressFormatType": "City",
+            "isConfirmationEnabled": true,
+            "confirmAllowedIntervalInMinutes": 2160,
+            "id": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+            "name": "string"
+        }
+    ]
+}
