@@ -14,9 +14,6 @@ abstract class EntityTestCase extends \PHPUnit\Framework\TestCase
     #[ArrayShape(['name' => 'string' , 'path' => 'string'])]
     protected array $fixture = [];
 
-    #[Deprecated]
-    protected string $jsonPath = '';
-
     /**
      * @var string loaded json fixture
      */
@@ -34,14 +31,6 @@ abstract class EntityTestCase extends \PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        /**
-         * @deprecated will be removed after all old entity test upgrade
-         * TODO: remove after old test upgrade to fixtures
-         */
-        if ($this->jsonPath) {
-            $this->json = file_get_contents($this->jsonPath);
-        }
-
         if (isset($this->fixture['name'])) {
             $this->json = JsonFactory::load($this->fixture['name'])
                 ->get($this->fixture['path'] ?? null);
