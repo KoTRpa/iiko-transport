@@ -30,11 +30,11 @@ class DeliveryPoint extends Entity
     public function __construct(?array $data = null)
     {
         if (null !== $data) {
-            $this->coordinates = isset($data['coordinates'])
+            $this->coordinates = !empty($data['coordinates'])
                 ? Coordinates::fromArray($data['coordinates'])
                 : null;
 
-            $this->address = isset($data['address'])
+            $this->address = !empty($data['address'])
                 ? Address::fromArray($data['address'])
                 : null;
 
