@@ -56,10 +56,9 @@ class Address extends Entity
     public ?string $doorphone = null;
 
     /**
-     * @required
-     * @var \KMA\IikoTransport\Entities\Deliveries\Response\Order\Region Region
+     * @var null|\KMA\IikoTransport\Entities\Deliveries\Response\Order\Region Region
      */
-    public Region $region;
+    public ?Region $region = null;
 
     public function __construct(?array $data = null)
     {
