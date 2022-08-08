@@ -63,7 +63,7 @@ class Address extends Entity
     public function __construct(?array $data = null)
     {
         if (null !== $data) {
-            $this->street = Street::fromArray($data['street']);
+            $this->street = isset($data['street']) ? Street::fromArray($data['street']) : null;
             $this->index = $data['index'] ?? null;
             $this->house = $data['house'];
             $this->building = $data['building'] ?? null;

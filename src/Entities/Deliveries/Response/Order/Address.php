@@ -64,7 +64,7 @@ class Address extends Entity
     public function __construct(?array $data = null)
     {
         if (null !== $data) {
-            $this->street = Street::fromArray($data['street']);
+            $this->street = isset($data['street']) ? Street::fromArray($data['street']) : null;
             $this->index = $data['index'] ?? null;
             $this->house = $data['house'];
             $this->building = $data['building'] ?? null;
@@ -72,7 +72,7 @@ class Address extends Entity
             $this->entrance = $data['entrance'] ?? null;
             $this->floor = $data['floor'] ?? null;
             $this->doorphone = $data['doorphone'] ?? null;
-            $this->region = Region::fromArray($data['region']);
+            $this->region = isset($data['region']) ? Region::fromArray($data['region']) : null;
         }
     }
 }
