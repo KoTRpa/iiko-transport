@@ -34,6 +34,7 @@ trait Http
         RequestOptions::CONNECT_TIMEOUT => 10,  // Connection timeout of the request in seconds
         RequestOptions::TIMEOUT => 60, // Timeout of the request in seconds
         RequestOptions::HTTP_ERRORS => false,
+        RequestOptions::FORCE_IP_RESOLVE => 'v4',
     ];
 
     /**
