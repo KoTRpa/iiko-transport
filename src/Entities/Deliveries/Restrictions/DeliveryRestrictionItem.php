@@ -14,17 +14,17 @@ class DeliveryRestrictionItem extends Entity
 
     /**
      * @required
-     * @var string <uuid> Terminal group ID
+     * @var string|null <uuid> Terminal group ID
      * | Can be obtained by `/api/1/terminal_groups` operation.
      */
-    public string $terminalGroupId;
+    public ?string $terminalGroupId = null;
 
     /**
      * @required
-     * @var string <uuid> Organization ID
+     * @var string|null <uuid> Organization ID
      * | Can be obtained by `/api/1/organizations` operation
      */
-    public string $organizationId;
+    public ?string $organizationId = null;
 
     /**
      * @required
