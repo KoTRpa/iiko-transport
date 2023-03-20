@@ -1,7 +1,7 @@
 {
     "name": "kma/iiko-transport",
     "type": "library",
-    "version": "0.4.13",
+    "version": "0.5.0",
     "description": "Iiko Transport API",
     "keywords": [
         "Iiko", "Iiko Transport"
