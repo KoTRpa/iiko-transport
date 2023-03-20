@@ -1,0 +1,19 @@
+{
+    "correlationId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+    "terminalGroupStopLists": [
+        {
+            "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+            "items": [
+                {
+                    "terminalGroupId": "4fab19a5-203c-4bf5-94eb-f572aa8b117b",
+                    "items": [
+                        {
+                            "balance": -1.0,
+                            "productId": "dcd53ddb-8104-4e48-8cc0-5df1088c6113"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
