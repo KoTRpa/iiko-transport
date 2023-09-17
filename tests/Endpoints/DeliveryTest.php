@@ -10,6 +10,8 @@ use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\SuitableTerminalGroupsRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\SuitableTerminalGroupsResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdResponse;
 use KMA\IikoTransport\Tests\EndpointTestCase;
@@ -83,6 +85,20 @@ class DeliveryTest extends EndpointTestCase
             DeliveryRestrictionsRequest::class,
             DeliveryRestrictionsResponse::class,
             '/api/1/delivery_restrictions'
+        );
+    }
+
+    /**
+     * @covers \KMA\IikoTransport\IikoTransport::suitableTerminalGroups
+     */
+    public function testSuitableTerminalGroups()
+    {
+        $this->runTests(
+            'Deliveries/SuitableTerminalGroupsResponse',
+            'suitableTerminalGroups',
+            SuitableTerminalGroupsRequest::class,
+            SuitableTerminalGroupsResponse::class,
+            '/api/1/delivery_restrictions/allowed'
         );
     }
 }
