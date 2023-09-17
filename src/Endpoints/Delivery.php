@@ -10,6 +10,8 @@ use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Create\CreateDeliveryResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Restrictions\DeliveryRestrictionsResponse;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\SuitableTerminalGroupsRequest;
+use KMA\IikoTransport\Endpoints\Delivery\Restrictions\SuitableTerminalGroupsResponse;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdRequest;
 use KMA\IikoTransport\Endpoints\Delivery\Retrieve\RetrieveDeliveryByIdResponse;
 
@@ -132,6 +134,26 @@ trait Delivery
         );
 
         return DeliveryRestrictionsResponse::fromJson($response->getBody());
+    }
+
+    /**
+     * @param \KMA\IikoTransport\Endpoints\Delivery\Restrictions\SuitableTerminalGroupsRequest $request
+     * @return \KMA\IikoTransport\Endpoints\Delivery\Restrictions\SuitableTerminalGroupsResponse
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     * @throws \KMA\IikoTransport\Exceptions\MissingRequiredFieldException
+     * @throws \KMA\IikoTransport\Exceptions\MissingTokenException
+     * @throws \KMA\IikoTransport\Exceptions\ResponseException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     */
+    public function suitableTerminalGroups(SuitableTerminalGroupsRequest $request): SuitableTerminalGroupsResponse
+    {
+        $response = $this->post(
+            'delivery_restrictions/allowed',
+            $request
+        );
+
+        return SuitableTerminalGroupsResponse::fromJson($response->getBody());
     }
 
 
