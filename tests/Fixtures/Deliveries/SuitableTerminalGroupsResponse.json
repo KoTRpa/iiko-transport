@@ -1,0 +1,35 @@
+{
+  "correlationId": "48fb4cd3-2ef6-4479-bea1-7c92721b988c",
+  "isAllowed": true,
+  "addressExternalId": "address",
+  "location": {
+    "latitude": 0,
+    "longitude": 0
+  },
+  "allowedItems": [
+    {
+      "terminalGroupId": "4fab19a5-203c-4bf5-94eb-f572aa8b117b",
+      "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+      "deliveryDurationInMinutes": 60,
+      "zone": "zone",
+      "deliveryServiceProductId": "bec293df-bc69-4f86-be1b-fcd5fad92dfb"
+    }
+  ],
+  "rejectedItems": [
+    {
+      "terminalGroupId": "4fab19a5-203c-4bf5-94eb-f572aa8b117b",
+      "organizationId": "7bc05553-4b68-44e8-b7bc-37be63c6d9e9",
+      "zone": "zone",
+      "rejectCode": "reject code",
+      "rejectHint": "reject hint",
+      "rejectItemData": {
+        "dateFrom": "2019-08-24 14:15:22.123",
+        "dateTo": "2019-08-24 14:15:22.123",
+        "allowedWeekDays": [
+          "monday"
+        ],
+        "minSum": 100
+      }
+    }
+  ]
+}

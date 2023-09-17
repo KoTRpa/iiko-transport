@@ -1,0 +1,35 @@
+{
+  "organizationIds": [
+    "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+  ],
+  "deliveryAddress": {
+    "city": "City",
+    "streetName": "Street",
+    "streetId": "16db97c5-c378-48d9-96c7-4c412955c014",
+    "house": "House",
+    "building": "Building",
+    "index": "index"
+  },
+  "orderLocation": {
+    "latitude": 0,
+    "longitude": 0
+  },
+  "orderItems": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "product": "Product",
+      "amount": 1,
+      "modifiers": [
+        {
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "product": "Modifier",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "isCourierDelivery": true,
+  "deliveryDate": "2019-08-24 14:15:22.123",
+  "deliverySum": 100,
+  "discountSum": 10
+}
