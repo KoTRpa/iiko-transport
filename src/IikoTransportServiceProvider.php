@@ -2,12 +2,12 @@
 
 namespace KMA\IikoTransport;
 
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class IikoTransportServiceProvider extends ServiceProvider
+class IikoTransportServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /** Boot the service provider. */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -16,18 +16,18 @@ class IikoTransportServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * Register the application services.
-     */
-    public function register()
+    public function register(): void
     {
-        // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/iiko_transport.php', 'iiko_transport');
 
-        // Register the main class to use with the facade
-        $this->app->bind('IikoTransport', function ($app) {
-            $config = app('config')->get('iiko_transport');
+        $this->app->bindIf(IikoTransport::class, function () {
+            $config = config('iiko_transport');
             return new IikoTransport($config);
         });
+    }
+
+    public function provides(): array
+    {
+        return [IikoTransport::class];
     }
 }
